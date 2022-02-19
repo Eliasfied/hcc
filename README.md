@@ -1,24 +1,15 @@
 # hccapp
 
-## Project setup
-```
-npm install
-```
+#description
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+webpage where you enter your character and realm and you get the total amount of honor you need to farm until your character has full duelist gear
 
-### Compiles and minifies for production
-```
-npm run build
-```
+# npm run server
 
-### Lints and fixes files
-```
-npm run lint
-```
+to start the node web server
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+this is needed so the we can make a http request using blizzard.js(libary for Blizzard API) to get data from the Blizzard API.
+
+# npm run serve 
+
+to start and test the project locally.
