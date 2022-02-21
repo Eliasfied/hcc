@@ -16,8 +16,8 @@ let wowClient = null;
 
 const createToken = async () => {
   wowClient = await blizzard.wow.createInstance({
-    key: "9f49b3b1f55c41c89896081558fadbf5",
-    secret: "61VhuItNaBr6fkUOTzEOdStU6VcrIaCx",
+    key: "",
+    secret: "",
     origin: "eu", // optional
     // locale: "de_DE", // optional
   });
