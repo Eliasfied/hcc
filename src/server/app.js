@@ -53,8 +53,8 @@ app.post("/getItemlevel", async (req, res) => {
   res.send(itemlevelArray);
 });
 
-const port = "8080";
 
-app.listen(port, () => {
+
+app.listen(process.env.PORT || 8080, () => {
   console.log(`Example app listening on port ${port}`);
 });
