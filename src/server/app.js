@@ -13,12 +13,13 @@ let inputRealm = "";
 let inputName = "";
 itemlevelArray = [];
 let wowClient = null;
+let inputRegion = null;
 
 const createToken = async () => {
   wowClient = await blizzard.wow.createInstance({
     key: "9f49b3b1f55c41c89896081558fadbf5",
     secret: "61VhuItNaBr6fkUOTzEOdStU6VcrIaCx",
-    origin: "eu", // optional
+    //origin: "eu", // optional
     // locale: "de_DE", // optional
   });
 };
@@ -27,6 +28,7 @@ const requestItemLevel = async () => {
   const requestdata = await wowClient.characterEquipment({
     realm: inputRealm,
     name: inputName,
+    origin: inputRegion,
   });
   //console.log(requestdata.data.equipped_items[0].level.value);
   itemlevel = requestdata.data.equipped_items[0].level.value;
@@ -41,6 +43,7 @@ app.post("/getItemlevel", async (req, res) => {
   console.log(req.body.charName);
   inputName = req.body.charName;
   inputRealm = req.body.charRealm;
+  inputRegion = req.body.charRegion;
   await requestItemLevel();
   console.log(itemlevel);
   console.log(itemlevelArray);
