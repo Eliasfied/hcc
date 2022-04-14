@@ -13,3 +13,12 @@ this is needed so the we can make a http request using blizzard.js(libary for Bl
 ## npm run serve 
 
 to start and test the project locally.
+
+## git
+
+git fetch
+git merge
+
+git add .
+git commit -m "Commit Message"
+git push origin main
