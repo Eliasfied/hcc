@@ -56,5 +56,5 @@ app.post("/getItemlevel", async (req, res) => {
 
 
 app.listen(process.env.PORT || 8080, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Example app listening on port`);
 });
