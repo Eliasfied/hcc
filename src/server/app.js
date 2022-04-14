@@ -5,11 +5,19 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 require('dotenv').config();
 console.log(process.env);
-console.log("hi");
+console.log("hi2");
+console.log(__dirname);
 
 var serveStatic = require('serve-static');
+const path = require('path');
 
-app.use(serveStatic(__dirname + "/dist"));
+//here we are configuring dist to serve app files
+app.use('/', serveStatic(path.join(__dirname, '../../dist')))
+
+// this * route is to serve project on different page routes except root `/`
+app.get(/.*/, function (req, res) {
+	res.sendFile(path.join(__dirname, '../../dist/index.html'))
+})
 
 app.use(cors());
 app.use(bodyParser.text());
