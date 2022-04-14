@@ -8,6 +8,8 @@ console.log(process.env);
 console.log("hi2");
 console.log(__dirname);
 
+app.use(cors());
+
 var serveStatic = require('serve-static');
 const path = require('path');
 
@@ -15,11 +17,11 @@ const path = require('path');
 app.use('/', serveStatic(path.join(__dirname, '../../dist')))
 
 // this * route is to serve project on different page routes except root `/`
-app.get(/.*/, function (req, res) {
-	res.sendFile(path.join(__dirname, '../../dist/index.html'))
-})
+//app.get(/.*/, function (req, res) {
+	//res.sendFile(path.join(__dirname, '../../dist/index.html'))
+//});
 
-app.use(cors());
+
 app.use(bodyParser.text());
 app.use(bodyParser.json({ limit: "50mb" }));
 
@@ -70,3 +72,8 @@ app.post("/getItemlevel", async (req, res) => {
 app.listen(process.env.PORT || 8080, () => {
   console.log(`Example app listening on port`);
 });
+
+/*server.on('clientError', (err, socket) => {
+  console.error(err);
+  socket.end('HTTP/1.1 400 Bad Request\r\n\r\n');
+}); */
