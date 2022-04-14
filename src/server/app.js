@@ -3,6 +3,9 @@ const app = express();
 const blizzard = require("blizzard.js");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+require('dotenv').config();
+console.log(process.env);
+console.log("hi");
 
 app.use(cors());
 app.use(bodyParser.text());
@@ -17,10 +20,9 @@ let inputRegion = null;
 
 const createToken = async () => {
   wowClient = await blizzard.wow.createInstance({
-    key: "9f49b3b1f55c41c89896081558fadbf5",
-    secret: "61VhuItNaBr6fkUOTzEOdStU6VcrIaCx",
+    key: process.env.API_KEY,
+    secret: process.env.API_SECRET,
     //origin: "eu", // optional
-    // locale: "de_DE", // optional
   });
 };
 
