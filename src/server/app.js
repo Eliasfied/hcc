@@ -7,12 +7,7 @@ require('dotenv').config();
 console.log(process.env);
 console.log("hi");
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname,  "build", "index.html"));
-  });
-}
+app.use(serveStatic(__dirname + "/dist"));
 
 app.use(cors());
 app.use(bodyParser.text());
