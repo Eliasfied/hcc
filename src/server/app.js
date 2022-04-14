@@ -7,6 +7,8 @@ require('dotenv').config();
 console.log(process.env);
 console.log("hi");
 
+var serveStatic = require('serve-static');
+
 app.use(serveStatic(__dirname + "/dist"));
 
 app.use(cors());
