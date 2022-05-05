@@ -45,7 +45,10 @@ const createToken = async () => {
     //origin: "eu", // optional
   });
 };
-
+initApp = async () => {
+  await createToken();
+};
+initApp();
 const requestItemLevel = async () => {
   const requestdata = await wowClient.characterEquipment({
     realm: inputRealm,
