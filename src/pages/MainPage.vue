@@ -1,7 +1,7 @@
 <template>
   <base-card>
     <div class="hcc-container">
-       <img src="../assets/hccbild.png" id="hccimage">
+      <img src="../assets/hccbild.png" id="hccimage" />
       <form class="hcc-form">
         <input
           type="text"
@@ -37,7 +37,7 @@
         />
         <p></p>
         <a href="#" class="calculateHonorButton" @click="getItemlevel"
-          >Calculate Honor</a
+          >Calculate Honore</a
         >
       </form>
     </div>
@@ -108,8 +108,7 @@ export default {
   created() {
     axios.request({
       method: "GET",
-      //url: "https://honorcolstcalculator.herokuapp.com/createToken",
-       url: "http://localhost:8080/createToken",
+      url: "https://honorcolstcalculator.herokuapp.com/createToken",
     });
   },
   methods: {
@@ -337,8 +336,8 @@ export default {
       axios
         .request({
           method: "POST",
-          //url: "https://honorcolstcalculator.herokuapp.com/getItemlevel",
-           url: "http://localhost:8080/getItemlevel",
+          url: "https://honorcolstcalculator.herokuapp.com/getItemlevel",
+
           headers: {},
           data: {
             charName: getName,
@@ -481,7 +480,6 @@ body {
   text-align: center;
 }
 
-
 #hccimage {
   width: 250px;
   height: 190px;
@@ -495,7 +493,6 @@ body {
   border: 2px solid black;
   border-radius: 4px;
   font-size: 2ch;
-  
 }
 
 #labelInput {
