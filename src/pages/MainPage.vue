@@ -108,7 +108,7 @@ export default {
   created() {
     axios.request({
       method: "GET",
-      url: "https://https://honorcolstcalculator.herokuapp.com/createToken",
+      url: "https://honorcolstcalculator.herokuapp.com/createToken",
     });
   },
   methods: {
