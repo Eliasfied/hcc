@@ -33,6 +33,11 @@ let wowClient = null;
 let inputRegion = null;
 //let requestdata = null;
 
+initApp = async () => {
+  await createToken();
+};
+initApp();
+
 const createToken = async () => {
   wowClient = await blizzard.wow.createInstance({
     key: process.env.API_KEY,
