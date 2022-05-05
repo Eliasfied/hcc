@@ -74,7 +74,7 @@ app.listen(process.env.PORT || 8080, () => {
   console.log(`Example app listening on port`);
 });
 
-createToken();
+await createToken();
 
 /*server.on('clientError', (err, socket) => {
   console.error(err);
