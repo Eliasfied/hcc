@@ -31,6 +31,7 @@ let inputName = "";
 itemlevelArray = [];
 let wowClient = null;
 let inputRegion = null;
+//let requestdata = null;
 
 const createToken = async () => {
   wowClient = await blizzard.wow.createInstance({
