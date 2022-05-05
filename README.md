@@ -24,3 +24,8 @@ git commit -m "Commit Message"
 git push origin main
 
 git push heroku HEAD:master
+
+## logs
+
+heroku logs --tail
+

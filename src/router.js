@@ -8,9 +8,9 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      redirect: "/hcc",
+      redirect: "/",
     },
-    { path: "/hcc", component: MainPage },
+    { path: "/", component: MainPage },
     { path: "/info", component: InfoPage },
     { path: "/contact", component: ContactPage },
   ],
