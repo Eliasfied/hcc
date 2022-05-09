@@ -41,7 +41,12 @@ const createToken = async () => {
     //process.env.API_KEY,
     //process.env.API_SECRET,
     //origin: "eu", // optional
-  });
+    
+  }
+  
+  );
+  console.log(key);
+  console.log(secret);
 };
 
 const requestItemLevel = async () => {

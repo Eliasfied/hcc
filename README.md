@@ -29,3 +29,5 @@ git push heroku HEAD:master
 
 heroku logs --tail
 
+heroku drains
+
