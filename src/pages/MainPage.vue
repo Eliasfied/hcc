@@ -105,12 +105,12 @@ export default {
       return "~" + Math.round(this.honorcost / 350);
     },
   },
-  /*created() {
+  created() {
     axios.request({
       method: "GET",
       url: "https://honorcolstcalculator.herokuapp.com/createToken",
     });
-  }, */
+  }, 
   methods: {
     changeToEu() {
       this.region = "eu";

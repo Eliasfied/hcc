@@ -17,9 +17,9 @@ const path = require('path');
 app.use('/', serveStatic(path.join(__dirname, '../../dist')))
 
  //this * route is to serve project on different page routes except root `/`
-//app.get(/.*/, function (req, res) {
-	//res.sendFile(path.join(__dirname, '../../dist/index.html'))
-//});
+app.get(/.*/, function (req, res) {
+	res.sendFile(path.join(__dirname, '../../dist/index.html'))
+});
 
 
 app.use(bodyParser.text());
@@ -36,15 +36,14 @@ let inputRegion = null;
 
 const createToken = async () => {
   wowClient = await blizzard.wow.createInstance({
-    key: process.env.API_KEY,
-    secret: process.env.API_SECRET,
+    key: '9f49b3b1f55c41c89896081558fadbf5',
+    //process.env.API_KEY,
+    secret: 'wV4d6FqQHMODXZ8ftucNGL0acgNIeLnR',
+    //process.env.API_SECRET,
     //origin: "eu", // optional
   });
 };
-initApp = async () => {
-  await createToken();
-};
-initApp();
+
 const requestItemLevel = async () => {
   const requestdata = await wowClient.characterEquipment({
     realm: inputRealm,
