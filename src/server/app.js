@@ -32,7 +32,7 @@ let wowClient = null;
 let inputRegion = null;
 let key_ID = '9f49b3b1f55c41c89896081558fadbf5';
 let secret_ID = 'wV4d6FqQHMODXZ8ftucNGL0acgNIeLnR';
-//let requestdata = null;
+let requestdata = null;
 
 const createToken = async () => {
   wowClient = await blizzard.wow.createInstance({
@@ -45,7 +45,7 @@ const createToken = async () => {
 };
 
 const requestItemLevel = async () => {
-  const requestdata = await wowClient.characterEquipment({
+   requestdata = await wowClient.characterEquipment({
     realm: inputRealm,
     name: inputName,
     origin: inputRegion,
