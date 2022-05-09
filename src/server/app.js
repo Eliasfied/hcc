@@ -3,24 +3,23 @@ const app = express();
 const blizzard = require("blizzard.js");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-require('dotenv').config();
+require("dotenv").config();
 console.log(process.env);
 console.log("hi2");
 console.log(__dirname);
 
 app.use(cors());
 
-var serveStatic = require('serve-static');
-const path = require('path');
+var serveStatic = require("serve-static");
+const path = require("path");
 
 //here we are configuring dist to serve app files
-app.use('/', serveStatic(path.join(__dirname, '../../dist')))
+app.use("/", serveStatic(path.join(__dirname, "../../dist")));
 
- //this * route is to serve project on different page routes except root `/`
+//this * route is to serve project on different page routes except root `/`
 app.get(/.*/, function (req, res) {
-	res.sendFile(path.join(__dirname, '../../dist/index.html'))
+  res.sendFile(path.join(__dirname, "../../dist/index.html"));
 });
-
 
 app.use(bodyParser.text());
 app.use(bodyParser.json({ limit: "50mb" }));
@@ -31,14 +30,15 @@ let inputName = "";
 itemlevelArray = [];
 let wowClient = null;
 let inputRegion = null;
+let key_ID = '9f49b3b1f55c41c89896081558fadbf5';
+let secret_ID = 'wV4d6FqQHMODXZ8ftucNGL0acgNIeLnR';
 //let requestdata = null;
-
 
 const createToken = async () => {
   wowClient = await blizzard.wow.createInstance({
-    key: '9f49b3b1f55c41c89896081558fadbf5',
+    key: key_ID,
+    secret: secret_ID,
     //process.env.API_KEY,
-    secret: 'wV4d6FqQHMODXZ8ftucNGL0acgNIeLnR',
     //process.env.API_SECRET,
     //origin: "eu", // optional
   });
@@ -71,13 +71,9 @@ app.post("/getItemlevel", async (req, res) => {
   res.send(itemlevelArray);
 });
 
-
-
 app.listen(process.env.PORT || 8080, () => {
   console.log(`Example app listening on port`);
 });
-
-
 
 /*server.on('clientError', (err, socket) => {
   console.error(err);
