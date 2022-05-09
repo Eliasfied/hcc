@@ -18,7 +18,7 @@ app.use("/", serveStatic(path.join(__dirname, "../../dist")));
 
 //this * route is to serve project on different page routes except root `/`
 app.get(/.*/, function (req, res) {
-  res.sendFile(path.join(__dirname, "../../dist/index.html"));
+ res.sendFile(path.join(__dirname, "../../dist/index.html"));
 });
 
 app.use(bodyParser.text());
@@ -30,27 +30,23 @@ let inputName = "";
 itemlevelArray = [];
 let wowClient = null;
 let inputRegion = null;
-let key_ID = '9f49b3b1f55c41c89896081558fadbf5';
-let secret_ID = 'wV4d6FqQHMODXZ8ftucNGL0acgNIeLnR';
-let requestdata = null;
+let key_ID = "9f49b3b1f55c41c89896081558fadbf5";
+let secret_ID = "wV4d6FqQHMODXZ8ftucNGL0acgNIeLnR";
+//let requestdata = null;
 
 const createToken = async () => {
   wowClient = await blizzard.wow.createInstance({
     key: key_ID,
-    secret: secret_ID,
     //process.env.API_KEY,
+    secret: secret_ID,
     //process.env.API_SECRET,
+
     //origin: "eu", // optional
-    
-  }
-  
-  );
-  console.log(key);
-  console.log(secret);
+  });
 };
 
 const requestItemLevel = async () => {
-   requestdata = await wowClient.characterEquipment({
+  const requestdata = await wowClient.characterEquipment({
     realm: inputRealm,
     name: inputName,
     origin: inputRegion,
