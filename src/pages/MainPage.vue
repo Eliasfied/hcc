@@ -37,14 +37,14 @@
         />
         <p></p>
         <a href="#" class="calculateHonorButton" @click="getItemlevel"
-          >Calculate Honore</a
+          >Calculate Honor</a
         >
       </form>
     </div>
     <div>
       <div v-if="showConvert">
         <h2>
-          In order to upgrade all your conquest pvp gear to Duelist level you
+          In order to upgrade all your equipped conquest pvp gear to Duelist level you
           need to farm additional
           {{ honorcost }} honor!
         </h2>
