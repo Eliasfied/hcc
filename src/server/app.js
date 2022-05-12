@@ -30,16 +30,13 @@ let inputName = "";
 itemlevelArray = [];
 let wowClient = null;
 let inputRegion = null;
-let key_ID = "9f49b3b1f55c41c89896081558fadbf5";
-let secret_ID = "wV4d6FqQHMODXZ8ftucNGL0acgNIeLnR";
+
 //let requestdata = null;
 
 const createToken = async () => {
   wowClient = await blizzard.wow.createInstance({
-    key:"", //key_ID,
-    //process.env.API_KEY,
-    secret:"", //secret_ID,
-    //process.env.API_SECRET,
+    key: process.env.API_KEY,
+    secret: process.env.API_SECRET,
 
     //origin: "eu", // optional
   });
