@@ -110,7 +110,7 @@ export default {
       method: "GET",
       url:
         //"http://localhost:8080/createToken",
-        "https://honorcolstcalculator.herokuapp.com/createToken",
+        "https://honorcostcalculator.herokuapp.com/createToken",
     });
   },
   methods: {
@@ -340,7 +340,7 @@ export default {
           method: "POST",
           url:
             //"http://localhost:8080/getItemlevel",
-            "https://honorcolstcalculator.herokuapp.com/getItemlevel",
+            "https://honorcostcalculator.herokuapp.com/getItemlevel",
 
           headers: {},
           data: {
