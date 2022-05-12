@@ -36,9 +36,9 @@ let secret_ID = "wV4d6FqQHMODXZ8ftucNGL0acgNIeLnR";
 
 const createToken = async () => {
   wowClient = await blizzard.wow.createInstance({
-    key: key_ID,
+    key:"", //key_ID,
     //process.env.API_KEY,
-    secret: secret_ID,
+    secret:"", //secret_ID,
     //process.env.API_SECRET,
 
     //origin: "eu", // optional
