@@ -21,6 +21,10 @@ app.get("/", function (req, res) {
  res.sendFile(path.join(__dirname, "../../dist/index.html"));
 });
 
+app.get("/hcc", function (req, res) {
+  res.sendFile(path.join(__dirname, "../../dist/index.html"));
+ });
+
 app.use(bodyParser.text());
 app.use(bodyParser.json({ limit: "50mb" }));
 
