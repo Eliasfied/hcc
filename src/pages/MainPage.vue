@@ -327,6 +327,10 @@ export default {
         this.errorMessage = "ERROR: Please select a region";
         return;
       }
+      if (this.name === "" || this.realm === "") {
+        this.errorMessage = "ERROR: Please enter a valid name and realm!"
+        return;
+      }
 
       this.errorMessage = "";
       this.ilvlArray = null;
