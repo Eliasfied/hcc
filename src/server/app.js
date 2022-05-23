@@ -54,7 +54,13 @@ const requestItemLevel = async () => {
 };
 
 app.get("/createToken", async (req, res) => {
-  await createToken();
+  try {
+    await createToken();
+  }
+  catch (error) {
+    console.log(error);
+  }
+  
 });
 
 app.post("/getItemlevel", async (req, res) => {
@@ -62,11 +68,17 @@ app.post("/getItemlevel", async (req, res) => {
   inputName = req.body.charName;
   inputRealm = req.body.charRealm;
   inputRegion = req.body.charRegion;
-  await requestItemLevel();
-  console.log(itemlevel);
-  console.log(itemlevelArray);
-  //res.send(itemlevel.toString());
-  res.send(itemlevelArray);
+  try {
+    await requestItemLevel();
+    console.log(itemlevel);
+    console.log(itemlevelArray);
+    //res.send(itemlevel.toString());
+    res.send(itemlevelArray);
+  } 
+  catch (error) {
+    console.log(error);
+  }
+ 
 });
 
 app.listen(process.env.PORT || 8080, () => {
