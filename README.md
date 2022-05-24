@@ -1,5 +1,7 @@
 # hccapp
 
+https://honorcostcalculator.herokuapp.com
+
 ## description
 
 webpage where you enter your character and realm and you get the total amount of honor you need to farm until your character has full duelist gear
