@@ -4,6 +4,7 @@
       <img src="../assets/hccbild.png" id="hccimage" />
       <form class="hcc-form">
         <input
+          :maxlength="20"
           type="text"
           id="input"
           name="name"
@@ -23,7 +24,6 @@
         <p></p>
         <label for="checkbox">EU</label>
         <input
-          :maxlength="20"
           type="checkbox"
           id="eu"
           v-model="checkedEu"
