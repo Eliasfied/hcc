@@ -13,7 +13,7 @@
         <p></p>
 
         <input
-          maxlength="20"
+          :maxlength="20"
           type="text"
           id="input"
           name="realm"
@@ -23,7 +23,7 @@
         <p></p>
         <label for="checkbox">EU</label>
         <input
-          maxlength="20"
+          :maxlength="20"
           type="checkbox"
           id="eu"
           v-model="checkedEu"
