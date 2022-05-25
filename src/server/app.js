@@ -81,6 +81,7 @@ app.post("/getItemlevel", async (req, res) => {
   } 
   catch (error) {
     console.log(error);
+    res.send("error");
   }
  
 });

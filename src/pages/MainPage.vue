@@ -355,6 +355,9 @@ export default {
         })
         .then((resp) => {
           this.showConvert = true;
+          if(resp.data === "error") {
+            this.errorMessage = "Cant load this character!"
+          }
           this.ilvlArray = resp.data;
           console.log(this.ilvlArray);
           for (var i = 0; i < this.ilvlArray.length; i++) {
