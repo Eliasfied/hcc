@@ -13,6 +13,7 @@
         <p></p>
 
         <input
+          maxlength="20"
           type="text"
           id="input"
           name="realm"
@@ -22,6 +23,7 @@
         <p></p>
         <label for="checkbox">EU</label>
         <input
+          maxlength="20"
           type="checkbox"
           id="eu"
           v-model="checkedEu"
@@ -44,21 +46,11 @@
     <div>
       <div v-if="showConvert">
         <h2>
-          In order to upgrade all your equipped conquest pvp gear to Duelist level you
-          need to farm additional
+          In order to upgrade all your equipped conquest pvp gear to Duelist
+          level you need to farm additional
           {{ honorcost }} honor!
         </h2>
         <p></p>
-
-        <ul v-if="showConvertWins">
-          <h2>This means you need to either win:</h2>
-          <h2>
-            <li>{{ bgwins }} Battlegrounds</li>
-            <li>{{ arena2vs2wins }} 2vs2 Arena Games</li>
-            <li>{{ arena3vs3wins }} 3vs3 Arena Games</li>
-            <li>{{ skirmishwins }} Skirmishes</li>
-          </h2>
-        </ul>
       </div>
       <p></p>
       <div>
@@ -328,7 +320,7 @@ export default {
         return;
       }
       if (this.name === "" || this.realm === "") {
-        this.errorMessage = "ERROR: Please enter a valid name and realm!"
+        this.errorMessage = "ERROR: Please enter a valid name and realm!";
         return;
       }
 
@@ -355,8 +347,8 @@ export default {
         })
         .then((resp) => {
           this.showConvert = true;
-          if(resp.data === "error") {
-            this.errorMessage = "Cant load this character!"
+          if (resp.data === "error") {
+            this.errorMessage = "Cant load this character!";
           }
           this.ilvlArray = resp.data;
           console.log(this.ilvlArray);
