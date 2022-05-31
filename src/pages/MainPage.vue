@@ -81,8 +81,8 @@ export default {
   created() {
     axios.request({
       method: "GET",
-      url: "http://localhost:8080/createToken",
-      // "https://honorcostcalculator.herokuapp.com/createToken",
+      url: //"http://localhost:8080/createToken",
+       "https://honorcostcalculator.herokuapp.com/createToken",
     });
   },
   methods: {
@@ -317,8 +317,8 @@ export default {
       axios
         .request({
           method: "POST",
-          url: "http://localhost:8080/getItemlevel",
-          //"https://honorcostcalculator.herokuapp.com/getItemlevel",
+          url: //"http://localhost:8080/getItemlevel",
+          "https://honorcostcalculator.herokuapp.com/getItemlevel",
 
           headers: {},
           data: {
