@@ -1,61 +1,54 @@
 <template>
   <base-card>
     <div class="hcc-container">
-      <img src="../assets/hccbild.png" id="hccimage" />
       <form class="hcc-form">
+        <label for="input" class="input-label">Find your Character</label>
         <input
-          :maxlength="20"
+          :maxlength="40"
           type="text"
           id="input"
           name="name"
-          placeholder="CHARACTER NAME"
+          placeholder="character-realm"
           v-model="name"
         />
-        <p></p>
+        <a href="#" class="calculateHonorButton" @click="getItemlevel"
+          > <fa icon="search"></fa></a
+        >
 
+        <label for="checkbox" class="region-label">EU</label>
         <input
-          :maxlength="20"
-          type="text"
-          id="input"
-          name="realm"
-          placeholder="REALM"
-          v-model="realm"
-        />
-        <p></p>
-        <label for="checkbox">EU</label>
-        <input
+          class="region-input"
           type="checkbox"
           id="eu"
           v-model="checkedEu"
           v-on:change="changeToEu"
         />
 
-        <label for="checkbox">US</label>
+        <label for="checkbox" class="region-label">US</label>
         <input
+          class="region-input"
           type="checkbox"
           id="us"
           v-model="checkedUs"
           v-on:change="changeToUs"
         />
-        <p></p>
-        <a href="#" class="calculateHonorButton" @click="getItemlevel"
-          >Calculate Honor</a
-        >
+        
       </form>
+     
     </div>
+  </base-card>
+  <base-card v-if="showConvert" class="output-card">
     <div>
-      <div v-if="showConvert">
-        <h2>
-          In order to upgrade all your equipped conquest pvp gear to Duelist
-          level you need to farm additional
-          {{ honorcost }} honor!
-        </h2>
-        <p></p>
-      </div>
+      <h2 class="upgrade-text">
+        In order to upgrade all your equipped conquest pvp gear to Duelist level
+        you need to farm additional
+        {{ honorcost }} honor!
+      </h2>
       <p></p>
-      <div>
-        <h2 id="errorHeader">{{ errorMessage }}</h2>
-      </div>
+    </div>
+    <p></p>
+    <div>
+      <h2 id="errorHeader">{{ errorMessage }}</h2>
     </div>
   </base-card>
 </template>
@@ -83,26 +76,12 @@ export default {
       errorMessage: "",
     };
   },
-  computed: {
-    skirmishwins() {
-      return "~" + Math.round(this.honorcost / 110);
-    },
-    arena2vs2wins() {
-      return "~" + Math.round(this.honorcost / 170);
-    },
-    arena3vs3wins() {
-      return "~" + Math.round(this.honorcost / 200);
-    },
-    bgwins() {
-      return "~" + Math.round(this.honorcost / 350);
-    },
-  },
+
   created() {
     axios.request({
       method: "GET",
-      url:
-        //"http://localhost:8080/createToken",
-        "https://honorcostcalculator.herokuapp.com/createToken",
+      url: "http://localhost:8080/createToken",
+      // "https://honorcostcalculator.herokuapp.com/createToken",
     });
   },
   methods: {
@@ -319,24 +298,25 @@ export default {
         this.errorMessage = "ERROR: Please select a region";
         return;
       }
-      if (this.name === "" || this.realm === "") {
+      if (this.name === "") {
         this.errorMessage = "ERROR: Please enter a valid name and realm!";
         return;
       }
 
+      let nameArray = this.name.split("-");
+
       this.errorMessage = "";
       this.ilvlArray = null;
       this.honorcost = 0;
-      let getName = this.name.toLowerCase();
-      let getRealm = this.realm.toLowerCase();
+      let getName = nameArray[0].toLowerCase();
+      let getRealm = nameArray[1].toLowerCase();
       let getRegion = this.region;
       console.log(getName);
       axios
         .request({
           method: "POST",
-          url:
-            //"http://localhost:8080/getItemlevel",
-            "https://honorcostcalculator.herokuapp.com/getItemlevel",
+          url: "http://localhost:8080/getItemlevel",
+          //"https://honorcostcalculator.herokuapp.com/getItemlevel",
 
           headers: {},
           data: {
@@ -470,7 +450,7 @@ export default {
 
 <style>
 body {
-  background-image: url("../assets/600px-Nagrand.png");
+  background-image: url("../assets/backgroundHCC.jpg");
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -488,37 +468,71 @@ body {
   height: 190px;
 }
 
+.hcc-container {
+  margin: auto;
+}
+
 .hcc-form {
-  margin-top: 10px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.input-label {
+  display: block;
+  color: white;
+  text-align: left;
+  font-size: 27px;
+  margin-bottom: 6px;
+}
+
+.region-label {
+  color: white;
+}
+
+.region-input {
+  width: 20px;
+  height: 20px;
 }
 
 #input {
-  border: 2px solid black;
+  border-top: 2px solid rgb(0, 98, 128);
+  border-bottom: 2px solid rgb(0, 98, 128);
+  border-left: 2px solid rgb(0, 98, 128);
+  border-right: 0;
   border-radius: 4px;
-  font-size: 2ch;
+  font-size: 4ch;
+  padding: 0.5rem;
+  background-color: #8bc2eb;
+  color: white;
+  margin: 4px;
+  margin-right: 0;
 }
 
-#labelInput {
-  font-size: 4ch;
-  width: 200px;
-  display: inline-block;
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(224, 255, 255, 0.5);
+  opacity: 1; /* Firefox */
+}
+
+.output-card {
+  height: 20rem;
+}
+
+.upgrade-text {
+  color: white;
 }
 
 .calculateHonorButton {
-  background-color: black;
-  border-radius: 28px;
-  border: 1px solid grey;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 17px;
-  padding: 16px 31px;
+  background: #8bc2eb;
+  color: white;
+  font-size: 4ch;
   text-decoration: none;
-  text-shadow: 0px 1px 0px black;
+  border: 2px solid rgb(0, 98, 128);
+  padding: 8px;
+ 
 }
 .calculateHonorButton:hover {
-  background-color: green;
+  background-color: rgb(0, 98, 128);
 }
 .calculateHonorButton:active {
   position: relative;
@@ -526,7 +540,7 @@ body {
 }
 
 input {
-  text-align: center;
+  text-align: left;
 }
 
 #errorHeader {
