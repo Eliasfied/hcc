@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav>
-      <h1><router-link to="/">Honor Cost Calculator</router-link></h1>
+      <img src="../../assets/hcclogo.png" class="header-image" />
       <ul>
         <h1>
           <li><router-link to="/hcc">Home</router-link></li>
@@ -16,6 +16,8 @@
     </nav>
   </header>
 </template>
+
+<!-- <img src="../../assets/hcclogo.png" class="header-image" / -->
 
 <style scoped>
 header {
@@ -37,7 +39,10 @@ header a {
   border: 1px solid transparent;
 }
 
-
+.header-image {
+  height: 50px;
+  margin-left: 85px;
+}
 
 h1 {
   margin: 0;
@@ -52,13 +57,10 @@ h1 a:hover,
 h1 a:active,
 h1 a.router-link-active {
   color: white;
- 
-
-
 }
 
 header nav {
-  width: 90%;
+  width: 100%;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -68,6 +70,7 @@ header nav {
 header ul {
   list-style: none;
   margin: 0;
+  margin-right: 50px;
   padding: 0;
   display: flex;
   justify-content: center;

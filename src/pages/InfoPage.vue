@@ -1,6 +1,5 @@
 <template>
     <base-card>
-    <h1><u>INFORMATION:</u></h1>
     <h2>This site was made to show how ridiculous the honor grind in Shadowlands is.</h2>
     <p>
     </p>

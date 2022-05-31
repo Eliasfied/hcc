@@ -11,11 +11,13 @@
           placeholder="character-realm"
           v-model="name"
         />
-        <a href="#" class="calculateHonorButton" @click="getItemlevel"
-          > <fa icon="search"></fa></a
-        >
+        <a href="#" class="calculateHonorButton" @click="getItemlevel">
+          <fa icon="search"></fa
+        ></a>
 
-        <label for="checkbox" class="region-label">EU</label>
+        <label for="eu" class="region-label"
+          ><img src="../assets/eu.png" class="region-image"
+        /></label>
         <input
           class="region-input"
           type="checkbox"
@@ -24,7 +26,8 @@
           v-on:change="changeToEu"
         />
 
-        <label for="checkbox" class="region-label">US</label>
+        <label for="us" class="region-label"><img src="../assets/us.png" class="region-image"
+        /></label>
         <input
           class="region-input"
           type="checkbox"
@@ -32,9 +35,10 @@
           v-model="checkedUs"
           v-on:change="changeToUs"
         />
-        
       </form>
-     
+       <div>
+      <h2 id="errorHeader">{{ errorMessage }}</h2>
+    </div>
     </div>
   </base-card>
   <base-card v-if="showConvert" class="output-card">
@@ -44,12 +48,9 @@
         you need to farm additional
         {{ honorcost }} honor!
       </h2>
-      <p></p>
     </div>
-    <p></p>
-    <div>
-      <h2 id="errorHeader">{{ errorMessage }}</h2>
-    </div>
+    
+   
   </base-card>
 </template>
 
@@ -294,6 +295,7 @@ export default {
       console.log(this.honorcost);
     },
     getItemlevel() {
+      console.log(this.region);
       if (this.region === null) {
         this.errorMessage = "ERROR: Please select a region";
         return;
@@ -487,11 +489,21 @@ body {
 
 .region-label {
   color: white;
+  
 }
 
 .region-input {
   width: 20px;
   height: 20px;
+  display: none;
+}
+
+.region-image {
+  width: 70px;
+  height: 60px;
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align:middle;
 }
 
 #input {
@@ -529,7 +541,6 @@ body {
   text-decoration: none;
   border: 2px solid rgb(0, 98, 128);
   padding: 8px;
- 
 }
 .calculateHonorButton:hover {
   background-color: rgb(0, 98, 128);
