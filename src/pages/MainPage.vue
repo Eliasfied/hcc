@@ -26,7 +26,8 @@
           v-on:change="changeToEu"
         />
 
-        <label for="us" class="region-label"><img src="../assets/us.png" class="region-image"
+        <label for="us" class="region-label"
+          ><img src="../assets/us.png" class="region-image"
         /></label>
         <input
           class="region-input"
@@ -36,9 +37,9 @@
           v-on:change="changeToUs"
         />
       </form>
-       <div>
-      <h2 id="errorHeader">{{ errorMessage }}</h2>
-    </div>
+      <div>
+        <h2 id="errorHeader">{{ errorMessage }}</h2>
+      </div>
     </div>
   </base-card>
   <base-card v-if="showConvert" class="output-card">
@@ -49,8 +50,6 @@
         {{ honorcost }} honor!
       </h2>
     </div>
-    
-   
   </base-card>
 </template>
 
@@ -81,8 +80,8 @@ export default {
   created() {
     axios.request({
       method: "GET",
-      url: //"http://localhost:8080/createToken",
-       "https://honorcostcalculator.herokuapp.com/createToken",
+      //"http://localhost:8080/createToken",
+      url: "https://honorcostcalculator.herokuapp.com/createToken",
     });
   },
   methods: {
@@ -317,8 +316,8 @@ export default {
       axios
         .request({
           method: "POST",
-          url: //"http://localhost:8080/getItemlevel",
-          "https://honorcostcalculator.herokuapp.com/getItemlevel",
+          //"http://localhost:8080/getItemlevel",
+          url: "https://honorcostcalculator.herokuapp.com/getItemlevel",
 
           headers: {},
           data: {
@@ -488,14 +487,17 @@ body {
 }
 
 .region-label {
-  color: white;
-  
+  width: 70px;
+  height: 60px;
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .region-input {
   width: 20px;
   height: 20px;
-  display: none;
+  
 }
 
 .region-image {
@@ -503,8 +505,10 @@ body {
   height: 60px;
   margin-left: 10px;
   display: inline-block;
-  vertical-align:middle;
+  vertical-align: middle;
 }
+
+
 
 #input {
   border-top: 2px solid rgb(0, 98, 128);
