@@ -42,25 +42,24 @@
       </div>
     </div>
   </base-card>
-  <base-card v-if="showConvert" class="output-card">
-    <div>
-      <h2 class="upgrade-text">
-        In order to upgrade all your equipped conquest pvp gear to Duelist level
-        you need to farm additional
-        {{ honorcost }} honor!
-      </h2>
-    </div>
-  </base-card>
+  <characterOutput
+    :itemIcon="itemIcon"
+    :honorcost="honorcost"
+    :ilvlArray="ilvlArray"
+    :upgradeCostArray="upgradeCostArray"
+    v-if="showConvert"
+  ></characterOutput>
 </template>
 
 <script>
 /*eslint-disable */
 import axios from "axios";
 import BaseCard from "../components/UI/BaseCard.vue";
-
+import characterOutput from "../components/comp/CharacterOutput.vue";
 export default {
   components: {
     BaseCard,
+    characterOutput,
   },
 
   data() {
@@ -74,14 +73,17 @@ export default {
       checkedEu: false,
       checkedUs: false,
       errorMessage: "",
+      upgradeCostArray: [],
+      itemIcon: 0,
     };
   },
 
   created() {
     axios.request({
       method: "GET",
-      //"http://localhost:8080/createToken",
+
       url: "https://honorcostcalculator.herokuapp.com/createToken",
+      //"http://localhost:8080/createToken",
     });
   },
   methods: {
@@ -95,200 +97,254 @@ export default {
       this.checkedEu = false;
       this.checkedUs = true;
     },
-    calculateBigPieces(itemlvl) {
+    calculateBigPieces(itemlvl, index) {
       //head, chest, legs, melee weapons for 900 conquest
       switch (itemlvl) {
         case 249:
           this.honorcost = this.honorcost + 8725;
+          this.upgradeCostArray[index] = 8725;
           break;
         case 252:
           this.honorcost = this.honorcost + 7950;
+          this.upgradeCostArray[index] = 7950;
           break;
         case 255:
           this.honorcost = this.honorcost + 7025;
+          this.upgradeCostArray[index] = 7025;
           break;
         case 259:
           this.honorcost = this.honorcost + 5950;
+          this.upgradeCostArray[index] = 5950;
           break;
         case 262:
           this.honorcost = this.honorcost + 4725;
+          this.upgradeCostArray[index] = 4725;
           break;
         case 265:
           this.honorcost = this.honorcost + 3350;
+          this.upgradeCostArray[index] = 3350;
           break;
         case 268:
           this.honorcost = this.honorcost + 1825;
+          this.upgradeCostArray[index] = 1825;
           break;
         case 272:
           this.honorcost = this.honorcost + 0;
+          this.upgradeCostArray[index] = 0;
           break;
         case 275:
           this.honorcost = this.honorcost + 0;
+          this.upgradeCostArray[index] = 0;
           break;
       }
       console.log(this.honorcost);
     },
-    calculateSmallPieces(itemlvl) {
+    calculateSmallPieces(itemlvl, index) {
       //neck, back, wrist, finger
       switch (itemlvl) {
         case 249:
           this.honorcost = this.honorcost + 5225;
+          this.upgradeCostArray[index] = 5225;
           break;
         case 252:
           this.honorcost = this.honorcost + 5225 - 450;
+          this.upgradeCostArray[index] = 5225 - 450;
           break;
         case 255:
           this.honorcost = this.honorcost + 5225 - 1000;
+          this.upgradeCostArray[index] = 5225 - 1000;
           break;
         case 259:
           this.honorcost = this.honorcost + 5225 - 1650;
+          this.upgradeCostArray[index] = 5225 - 1650;
           break;
         case 262:
           this.honorcost = this.honorcost + 5225 - 2375;
+          this.upgradeCostArray[index] = 5225 - 2375;
           break;
         case 265:
           this.honorcost = this.honorcost + 5225 - 3200;
+          this.upgradeCostArray[index] = 5225 - 3200;
           break;
         case 268:
           this.honorcost = this.honorcost + 5225 - 4125;
+          this.upgradeCostArray[index] = 5225 - 4125;
           break;
         case 272:
           this.honorcost = this.honorcost + 0;
+          this.upgradeCostArray[index] = 0;
           break;
         case 275:
           this.honorcost = this.honorcost + 0;
+          this.upgradeCostArray[index] = 0;
           break;
       }
       console.log(this.honorcost);
     },
-    calculateMiddlePieces(itemlvl) {
+    calculateMiddlePieces(itemlvl, index) {
       //shoulder, waist, feet, trinket(not insigne), hands
       switch (itemlvl) {
         case 249:
           this.honorcost = this.honorcost + 6950;
+          this.upgradeCostArray[index] = 6950;
           break;
         case 252:
           this.honorcost = this.honorcost + 6950 - 600;
+          this.upgradeCostArray[index] = 6950 - 600;
           break;
         case 255:
           this.honorcost = this.honorcost + 6950 - 1325;
+          this.upgradeCostArray[index] = 6950 - 1325;
           break;
         case 259:
           this.honorcost = this.honorcost + 6950 - 2175;
+          this.upgradeCostArray[index] = 6950 - 2175;
           break;
         case 262:
           this.honorcost = this.honorcost + 6950 - 3150;
+          this.upgradeCostArray[index] = 6950 - 3150;
           break;
         case 265:
           this.honorcost = this.honorcost + 6950 - 4250;
+          this.upgradeCostArray[index] = 6950 - 4250;
           break;
         case 268:
           this.honorcost = this.honorcost + 6950 - 5475;
+          this.upgradeCostArray[index] = 6950 - 5475;
           break;
         case 272:
           this.honorcost = this.honorcost + 0;
+          this.upgradeCostArray[index] = 0;
           break;
         case 275:
           this.honorcost = this.honorcost + 0;
+          this.upgradeCostArray[index] = 0;
           break;
       }
       console.log(this.honorcost);
     },
-    calculate2HandWeapon(itemlvl) {
+    calculate2HandWeapon(itemlvl, index) {
       //shoulder, waist, feet, trinket(not insigne), hands
       switch (itemlvl) {
         case 249:
           this.honorcost = this.honorcost + 17450;
+          this.upgradeCostArray[index] = 17450;
           break;
         case 252:
           this.honorcost = this.honorcost + 17450 - 1550;
+          this.upgradeCostArray[index] = 17450 - 1550;
           break;
         case 255:
           this.honorcost = this.honorcost + 17450 - 3400;
+          this.upgradeCostArray[index] = 17450 - 3400;
           break;
         case 259:
           this.honorcost = this.honorcost + 17450 - 5500;
+          this.upgradeCostArray[index] = 17450 - 5500;
           break;
         case 262:
           this.honorcost = this.honorcost + 17450 - 8000;
+          this.upgradeCostArray[index] = 17450 - 8000;
           break;
         case 265:
           this.honorcost = this.honorcost + 17450 - 10750;
+          this.upgradeCostArray[index] = 17450 - 10750;
           break;
         case 268:
           this.honorcost = this.honorcost + 17450 - 13800;
+          this.upgradeCostArray[index] = 17450 - 13800;
           break;
         case 272:
           this.honorcost = this.honorcost + 0;
+          this.upgradeCostArray[index] = 0;
           break;
         case 275:
           this.honorcost = this.honorcost + 0;
+          this.upgradeCostArray[index] = 0;
           break;
       }
       console.log(this.honorcost);
     },
-    calculateShield(itemlvl) {
+    calculateShield(itemlvl, index) {
       //shield and offhand
       switch (itemlvl) {
         case 249:
           this.honorcost = this.honorcost + 4300;
+          this.upgradeCostArray[index] = 4300;
           break;
         case 252:
           this.honorcost = this.honorcost + 4300 - 375;
+          this.upgradeCostArray[index] = 4300 - 375;
           break;
         case 255:
           this.honorcost = this.honorcost + 4300 - 825;
+          this.upgradeCostArray[index] = 4300 - 825;
           break;
         case 259:
           this.honorcost = this.honorcost + 4300 - 1350;
+          this.upgradeCostArray[index] = 4300 - 1350;
           break;
         case 262:
           this.honorcost = this.honorcost + 4300 - 1950;
+          this.upgradeCostArray[index] = 4300 - 1950;
           break;
         case 265:
           this.honorcost = this.honorcost + 4300 - 2625;
+          this.upgradeCostArray[index] = 4300 - 2625;
           break;
         case 268:
           this.honorcost = this.honorcost + 4300 - 3375;
+          this.upgradeCostArray[index] = 4300 - 3375;
           break;
         case 272:
           this.honorcost = this.honorcost + 0;
+          this.upgradeCostArray[index] = 0;
           break;
         case 275:
           this.honorcost = this.honorcost + 0;
+          this.upgradeCostArray[index] = 0;
           break;
       }
       console.log(this.honorcost);
     },
-    calculateMainHand(itemlvl) {
+    calculateMainHand(itemlvl, index) {
       //caster Mainhand
       switch (itemlvl) {
         case 249:
           this.honorcost = this.honorcost + 13150;
+          this.upgradeCostArray[index] = 13150;
           break;
         case 252:
           this.honorcost = this.honorcost + 13150 - 1175;
+          this.upgradeCostArray[index] = 13150 - 1175;
           break;
         case 255:
           this.honorcost = this.honorcost + 13150 - 2575;
+          this.upgradeCostArray[index] = 13150 - 2575;
           break;
         case 259:
           this.honorcost = this.honorcost + 13150 - 4200;
+          this.upgradeCostArray[index] = 13150 - 4200;
           break;
         case 262:
           this.honorcost = this.honorcost + 13150 - 6050;
+          this.upgradeCostArray[index] = 13150 - 6050;
           break;
         case 265:
           this.honorcost = this.honorcost + 13150 - 8125;
+          this.upgradeCostArray[index] = 13150 - 8125;
           break;
         case 268:
           this.honorcost = this.honorcost + 13150 - 10425;
+          this.upgradeCostArray[index] = 13150 - 10425;
           break;
         case 272:
           this.honorcost = this.honorcost + 0;
+          this.upgradeCostArray[index] = 0;
           break;
         case 275:
           this.honorcost = this.honorcost + 0;
+          this.upgradeCostArray[index] = 0;
           break;
       }
       console.log(this.honorcost);
@@ -316,8 +372,9 @@ export default {
       axios
         .request({
           method: "POST",
-          //"http://localhost:8080/getItemlevel",
+
           url: "https://honorcostcalculator.herokuapp.com/getItemlevel",
+          //url: "http://localhost:8080/getItemlevel",
 
           headers: {},
           data: {
@@ -368,31 +425,40 @@ export default {
               if (checkPvPRank === true) {
                 switch (this.ilvlArray[i].inventory_type.type) {
                   case "HEAD":
-                    this.calculateBigPieces(this.ilvlArray[i].level.value);
+                    this.calculateBigPieces(this.ilvlArray[i].level.value, i);
                     break;
                   case "NECK":
-                    this.calculateSmallPieces(this.ilvlArray[i].level.value);
+                    this.calculateSmallPieces(this.ilvlArray[i].level.value, i);
                     break;
                   case "SHOULDER":
-                    this.calculateMiddlePieces(this.ilvlArray[i].level.value);
+                    this.calculateMiddlePieces(
+                      this.ilvlArray[i].level.value,
+                      i
+                    );
                     break;
                   case "CHEST":
-                    this.calculateBigPieces(this.ilvlArray[i].level.value);
+                    this.calculateBigPieces(this.ilvlArray[i].level.value, i);
                     break;
                   case "LEGS":
-                    this.calculateBigPieces(this.ilvlArray[i].level.value);
+                    this.calculateBigPieces(this.ilvlArray[i].level.value, i);
                     break;
                   case "WAIST":
-                    this.calculateMiddlePieces(this.ilvlArray[i].level.value);
+                    this.calculateMiddlePieces(
+                      this.ilvlArray[i].level.value,
+                      i
+                    );
                     break;
                   case "WRIST":
-                    this.calculateSmallPieces(this.ilvlArray[i].level.value);
+                    this.calculateSmallPieces(this.ilvlArray[i].level.value, i);
                     break;
                   case "HAND":
-                    this.calculateMiddlePieces(this.ilvlArray[i].level.value);
+                    this.calculateMiddlePieces(
+                      this.ilvlArray[i].level.value,
+                      i
+                    );
                     break;
                   case "FINGER":
-                    this.calculateSmallPieces(this.ilvlArray[i].level.value);
+                    this.calculateSmallPieces(this.ilvlArray[i].level.value, i);
                     break;
                   case "TRINKET":
                     if (
@@ -403,18 +469,24 @@ export default {
                       this.ilvlArray[i].name.includes("Eternal") === true ||
                       this.ilvlArray[i].name.includes("Resonator") === true
                     ) {
-                      this.calculateMiddlePieces(this.ilvlArray[i].level.value);
+                      this.calculateMiddlePieces(
+                        this.ilvlArray[i].level.value,
+                        i
+                      );
                       break;
                     } else {
-                      this.calculateSmallPieces(this.ilvlArray[i].level.value);
+                      this.calculateSmallPieces(
+                        this.ilvlArray[i].level.value,
+                        i
+                      );
                     }
 
                     break;
                   case "CLOAK":
-                    this.calculateSmallPieces(this.ilvlArray[i].level.value);
+                    this.calculateSmallPieces(this.ilvlArray[i].level.value, i);
                     break;
                   case "TWOHWEAPON":
-                    this.calculate2HandWeapon(this.ilvlArray[i].level.value);
+                    this.calculate2HandWeapon(this.ilvlArray[i].level.value, i);
                     break;
                   case "WEAPON":
                     if (
@@ -424,24 +496,27 @@ export default {
                         true ||
                       this.ilvlArray[i].name.includes("Gavel") === true
                     ) {
-                      this.calculateMainHand(this.ilvlArray[i].level.value);
+                      this.calculateMainHand(this.ilvlArray[i].level.value, i);
                     } else {
-                      this.calculateBigPieces(this.ilvlArray[i].level.value);
+                      this.calculateBigPieces(this.ilvlArray[i].level.value, i);
                     }
 
                     break;
                   case "SHIELD":
-                    this.calculateShield(this.ilvlArray[i].level.value);
+                    this.calculateShield(this.ilvlArray[i].level.value, i);
                     break;
                   case "HOLDABLE":
-                    this.calculateShield(this.ilvlArray[i].level.value);
+                    this.calculateShield(this.ilvlArray[i].level.value, i);
                     break;
                 }
               } else {
                 this.honorcost = this.honorcost + 0;
+                this.upgradeCostArray[i] = 0;
               }
             }
           }
+          this.itemIcon = this.itemIcon + 2;
+          console.log(this.itemIcon);
         })
         .catch((err) => {});
     },
@@ -497,7 +572,6 @@ body {
 .region-input {
   width: 20px;
   height: 20px;
-  
 }
 
 .region-image {
@@ -507,8 +581,6 @@ body {
   display: inline-block;
   vertical-align: middle;
 }
-
-
 
 #input {
   border-top: 2px solid rgb(0, 98, 128);

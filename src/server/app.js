@@ -18,14 +18,12 @@ app.use("/", serveStatic(path.join(__dirname, "../../dist")));
 
 //this * route is to serve project on different page routes except root `/`
 app.get("/", function (req, res) {
- res.sendFile(path.join(__dirname, "../../dist/index.html"));
+  res.sendFile(path.join(__dirname, "../../dist/index.html"));
 });
- 
+
 app.get("/hcc", function (req, res) {
   res.sendFile(path.join(__dirname, "../../dist/index.html"));
- });
-
-
+});
 
 app.use(bodyParser.text());
 app.use(bodyParser.json({ limit: "50mb" }));
@@ -36,6 +34,7 @@ let inputName = "";
 itemlevelArray = [];
 let wowClient = null;
 let inputRegion = null;
+let iconData = null;
 
 //let requestdata = null;
 
@@ -59,14 +58,21 @@ const requestItemLevel = async () => {
   itemlevelArray = requestdata.data.equipped_items;
 };
 
+const requestItemIcon = async (trueID) => {
+  const requestdata = await wowClient.item({
+    id: trueID,
+    media: true,
+  });
+  iconData = requestdata.data;
+  console.log(iconData);
+};
+
 app.get("/createToken", async (req, res) => {
   try {
     await createToken();
-  }
-  catch (error) {
+  } catch (error) {
     console.log(error);
   }
-  
 });
 
 app.post("/getItemlevel", async (req, res) => {
@@ -80,12 +86,21 @@ app.post("/getItemlevel", async (req, res) => {
     console.log(itemlevelArray);
     //res.send(itemlevel.toString());
     res.send(itemlevelArray);
-  } 
-  catch (error) {
+  } catch (error) {
     console.log(error);
     res.send("error");
   }
- 
+});
+
+app.post("/getItemIcon", async (req, res) => {
+  console.log("reqID " + req.body.iconID);
+  try {
+    await requestItemIcon(req.body.iconID);
+    res.send(iconData);
+  } catch (error) {
+    console.log("ERROR IN GETITEM SERVER METHOD");
+    res.send("error FROM SERVER GETITEMICON METHOD");
+  }
 });
 
 app.listen(process.env.PORT || 8080, () => {

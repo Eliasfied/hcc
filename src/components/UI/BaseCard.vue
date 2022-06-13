@@ -12,7 +12,7 @@
   margin: 2rem auto;
   margin-top: 6rem;
   max-width: 50rem;
-  height: 12rem;
+  height: auto;
   color: white;
   background-color: rgb(0, 0, 0, 0.5);
   border: 1px solid black;
