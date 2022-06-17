@@ -196,12 +196,18 @@ export default {
   },
   methods: {
     wowHead(index) {
+
       try {
-        return "https://www.wowhead.com/item=" + this.ilvlArray[index].media.id;
+        let returnValue = "https://www.wowhead.com/item=" + this.ilvlArray[index].media.id + "?bonus="
+      for (let y = 0; y < this.ilvlArray[index].bonus_list.length; y++ ) {
+        returnValue = returnValue + this.ilvlArray[index].bonus_list[y] + ":"
+       }
+        return returnValue;
       } catch {
         return "https://www.wowhead.com/item=";
       }
     },
+    
 
     Rank(index) {
       //darf erst ausgeführt werden nachdem ilvlArray befüllt wurde (props geschickt wurden) -> lifecycle hook
@@ -253,6 +259,7 @@ export default {
         this.iconArray[15] = "../../assets/nopicture.png";
       }
     },
+  
 
     async getIcons() {
       this.isLoading = true;
