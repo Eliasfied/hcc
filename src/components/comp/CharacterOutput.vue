@@ -4,8 +4,13 @@
       <div class="honorcost-div">
         <h2>
           You need:
-          <span style="color: #ff0000">{{ honorcost }}</span> honor!
+          <span style="color: #ff0000">{{ honorcost }} </span>
+          
         </h2>
+         <img
+            class="honor-image"
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
       </div>
       <div class="left-item-div">
         <div class="item-div">
@@ -13,6 +18,9 @@
           <span class="span-rank">{{ Rank(0) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(0) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
         <div class="item-div">
@@ -20,6 +28,9 @@
           <span class="span-rank">{{ Rank(1) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(1) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
         <div class="item-div">
@@ -27,6 +38,9 @@
           <span class="span-rank">{{ Rank(2) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(2) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
         <div class="item-div">
@@ -34,6 +48,9 @@
           <span class="span-rank">{{ Rank(13) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(13) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
         <div class="item-div">
@@ -41,6 +58,9 @@
           <span class="span-rank">{{ Rank(3) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(3) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
         <div class="item-div">
@@ -48,6 +68,9 @@
           <span class="span-rank">{{ Rank(4) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(4) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
         <div class="item-div">
@@ -55,24 +78,32 @@
           <span class="span-rank">{{ Rank(5) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(5) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
       </div>
       <div class="right-item-div">
-
-          <div class="item-div">
+        <div class="item-div">
           <a href="#"><img :src="iconArray[6]" /></a>
           <span class="span-rank">{{ Rank(6) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(6) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
-        
+
         <div class="item-div">
           <a href="#"><img :src="iconArray[7]" /></a>
           <span class="span-rank">{{ Rank(7) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(7) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
         <div class="item-div">
@@ -80,6 +111,9 @@
           <span class="span-rank">{{ Rank(8) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(8) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
         <div class="item-div">
@@ -87,6 +121,9 @@
           <span class="span-rank">{{ Rank(9) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(9) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
         <div class="item-div">
@@ -94,6 +131,9 @@
           <span class="span-rank">{{ Rank(10) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(10) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
         <div class="item-div">
@@ -101,6 +141,9 @@
           <span class="span-rank">{{ Rank(11) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(11) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
         <div class="item-div">
@@ -108,6 +151,9 @@
           <span class="span-rank">{{ Rank(12) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(12) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
       </div>
@@ -117,6 +163,9 @@
           <span class="span-rank">{{ Rank(14) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(14) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
         <div class="weapon-item-div">
@@ -124,6 +173,9 @@
           <span class="span-rank">{{ Rank(15) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(15) }}</span>
+          <img
+            src="../../assets/achievement_legionpvptier4.gif"
+          />
           <br />
         </div>
       </div>
@@ -172,11 +224,11 @@ export default {
       }
     },
     upgradeCosts(index) {
-     // console.log(this.upgradeCostArray);
+      // console.log(this.upgradeCostArray);
       if (this.upgradeCostArray[index] != null) {
         return "Costs: " + this.upgradeCostArray[index];
       } else {
-        return "Costs: None";
+        return "Costs: 0";
       }
     },
 
@@ -484,7 +536,11 @@ export default {
   display: block;
 }
 .honorcost-div {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid lightgray;
+  margin-bottom: 25px;
 }
 
 .left-item-div {
@@ -542,6 +598,15 @@ export default {
 
 .span-cost {
   margin: 8px;
+  margin-right: 3px;
   color: red;
+}
+
+.honor-image {
+  height: 22px;
+  width: 22px;
+  margin-left: 4px;
+  
+
 }
 </style>
