@@ -35,6 +35,7 @@ itemlevelArray = [];
 let wowClient = null;
 let inputRegion = null;
 let iconData = null;
+let charMedia = [];
 
 //let requestdata = null;
 
@@ -65,6 +66,23 @@ const requestItemIcon = async (trueID) => {
   });
   iconData = requestdata.data;
   console.log(iconData);
+};
+
+const requestCharacterImage = async (xname, xrealm, xregion) => {
+ 
+  inputName = xname;
+  inputRealm = xrealm;
+  inputRegion = xregion;
+  console.log(inputName, inputRealm, inputRegion);
+
+  const requestdata = await wowClient.characterMedia({
+    name: inputName,
+    realm: inputRealm,
+    origin: inputRegion,
+  });
+  console.log("test");
+  charMedia = requestdata.data;
+  console.log(charMedia);
 };
 
 app.get("/createToken", async (req, res) => {
@@ -100,6 +118,21 @@ app.post("/getItemIcon", async (req, res) => {
   } catch (error) {
     console.log("ERROR IN GETITEM SERVER METHOD");
     res.send("error FROM SERVER GETITEMICON METHOD");
+  }
+});
+
+app.post("/getCharacterImage", async (req, res) => {
+  console.log("bis hierhin kommt er")
+  inputName = req.body.name;
+  inputRealm = req.body.realm;
+  inputRegion = req.body.region;
+  try {
+    await requestCharacterImage(req.body.name, req.body.realm, req.body.region);
+    res.send(charMedia);
+  } catch (error) {
+    console.log(charMedia);
+    console.log("error from characterImage function");
+    res.send("error from getCharacterImage function");
   }
 });
 

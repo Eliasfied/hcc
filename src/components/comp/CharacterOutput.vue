@@ -1,16 +1,22 @@
 <template>
-  <base-card v-if="!isLoading">
+  <base-card
+    v-if="!isLoading"
+    v-bind:style="{
+      'background-image': 'url(' + charMediaLink + ')',
+      'background-repeat': 'no repeat',
+      'background-size': '100% 100%',
+    }"
+  >
     <div class="container">
       <div class="honorcost-div">
         <h2>
           You need:
           <span style="color: #ff0000">{{ honorcost }} </span>
-          
         </h2>
-         <img
-            class="honor-image"
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+        <img
+          class="honor-image"
+          src="../../assets/achievement_legionpvptier4.gif"
+        />
       </div>
       <div class="left-item-div">
         <div class="item-div">
@@ -18,9 +24,7 @@
           <span class="span-rank">{{ Rank(0) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(0) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
         <div class="item-div">
@@ -28,9 +32,7 @@
           <span class="span-rank">{{ Rank(1) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(1) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
         <div class="item-div">
@@ -38,9 +40,7 @@
           <span class="span-rank">{{ Rank(2) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(2) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
         <div class="item-div">
@@ -48,9 +48,7 @@
           <span class="span-rank">{{ Rank(13) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(13) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
         <div class="item-div">
@@ -58,9 +56,7 @@
           <span class="span-rank">{{ Rank(3) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(3) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
         <div class="item-div">
@@ -68,9 +64,7 @@
           <span class="span-rank">{{ Rank(4) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(4) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
         <div class="item-div">
@@ -78,9 +72,7 @@
           <span class="span-rank">{{ Rank(5) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(5) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
       </div>
@@ -90,9 +82,7 @@
           <span class="span-rank">{{ Rank(6) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(6) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
 
@@ -101,9 +91,7 @@
           <span class="span-rank">{{ Rank(7) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(7) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
         <div class="item-div">
@@ -111,9 +99,7 @@
           <span class="span-rank">{{ Rank(8) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(8) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
         <div class="item-div">
@@ -121,9 +107,7 @@
           <span class="span-rank">{{ Rank(9) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(9) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
         <div class="item-div">
@@ -131,9 +115,7 @@
           <span class="span-rank">{{ Rank(10) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(10) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
         <div class="item-div">
@@ -141,9 +123,7 @@
           <span class="span-rank">{{ Rank(11) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(11) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
         <div class="item-div">
@@ -151,9 +131,7 @@
           <span class="span-rank">{{ Rank(12) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(12) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
       </div>
@@ -163,9 +141,7 @@
           <span class="span-rank">{{ Rank(14) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(14) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
         <div class="weapon-item-div">
@@ -173,9 +149,7 @@
           <span class="span-rank">{{ Rank(15) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(15) }}</span>
-          <img
-            src="../../assets/achievement_legionpvptier4.gif"
-          />
+          <img src="../../assets/achievement_legionpvptier4.gif" />
           <br />
         </div>
       </div>
@@ -190,11 +164,24 @@ import axios from "axios";
 import BaseCard from "../UI/BaseCard.vue";
 export default {
   components: { BaseCard },
-  props: ["honorcost", "ilvlArray", "upgradeCostArray", "itemIcon"],
+  props: [
+    "name",
+    "realm",
+    "region",
+    "honorcost",
+    "ilvlArray",
+    "upgradeCostArray",
+    "itemIcon",
+  ],
   data() {
     return {
       iconArray: [],
-      itemIconEndpoint: "https://honorcostcalculator.herokuapp.com/getItemIcon", // url: "http://localhost:8080/getItemIcon",
+      charMediaLink: "",
+      itemIconEndpoint: "https://honorcostcalculator.herokuapp.com/getItemIcon",
+      //"http://localhost:8080/getItemIcon",
+      characterMediaEndpoint:
+        "https://honorcostcalculator.herokuapp.com/getCharacterImage",
+      //"http://localhost:8080/getCharacterImage",
       isLoading: false,
     };
   },
@@ -261,6 +248,14 @@ export default {
 
     async getIcons() {
       this.isLoading = true;
+      let nameArray = this.name.split("-");
+      let getName = nameArray[0].toLowerCase();
+      let getRealm = nameArray[1].toLowerCase();
+      let getRegion = this.region;
+      console.log(getName);
+      console.log(getRealm);
+      console.log(getRegion);
+
       await axios
         .all([
           axios.request({
@@ -412,6 +407,17 @@ export default {
               iconID: this.ilvlArray[14].media.id,
             },
           }),
+          axios.request({
+            method: "POST",
+            url: this.characterMediaEndpoint,
+
+            headers: {},
+            data: {
+              name: getName,
+              realm: getRealm,
+              region: getRegion,
+            },
+          }),
         ])
         .then(
           axios.spread(
@@ -430,7 +436,8 @@ export default {
               data11,
               data12,
               data13,
-              data14
+              data14,
+              charImageData
             ) => {
               try {
                 this.iconArray[0] = data0.data.assets[0].value;
@@ -521,6 +528,12 @@ export default {
                 this.iconArray[14] = "../../assets/nopicture.png";
                 console.log(error);
               }
+              try {
+                this.charMediaLink = charImageData.data.assets[2].value;
+                console.log(this.charMediaLink);
+              } catch (error) {
+                console.log("cant load charImageData");
+              }
               this.isLoading = false;
             }
           )
@@ -606,7 +619,5 @@ export default {
   height: 22px;
   width: 22px;
   margin-left: 4px;
-  
-
 }
 </style>

@@ -43,6 +43,8 @@
     </div>
   </base-card>
   <characterOutput
+    :name="name"
+    :region="region"
     :itemIcon="itemIcon"
     :honorcost="honorcost"
     :ilvlArray="ilvlArray"
@@ -83,7 +85,7 @@ export default {
       method: "GET",
 
       url: "https://honorcostcalculator.herokuapp.com/createToken",
-      //"http://localhost:8080/createToken",
+      //url: "http://localhost:8080/createToken",
     });
   },
   methods: {
@@ -374,7 +376,7 @@ export default {
           method: "POST",
 
           url: "https://honorcostcalculator.herokuapp.com/getItemlevel",
-          //url: "http://localhost:8080/getItemlevel",
+         // url: "http://localhost:8080/getItemlevel",
 
           headers: {},
           data: {
