@@ -1,7 +1,7 @@
 <template>
   <base-card>
     <div class="hcc-container">
-      <form class="hcc-form">
+      <form @submit.prevent="getItemlevel" class="hcc-form">
         <label for="input" class="input-label">Find your Character</label>
         <input
           :maxlength="40"
@@ -81,6 +81,13 @@ export default {
   },
 
   created() {
+    document.addEventListener.call(window, "keyup", event => {
+      if (event.key === 13) {
+        console.log("lol");
+        this.getItemlevel();
+      }
+    });
+
     axios.request({
       method: "GET",
 
@@ -424,7 +431,11 @@ export default {
                   "Rival II"
                 );
 
-              if (checkPvPRank === true || this.ilvlArray[i].inventory_type.type === "BODY" || this.ilvlArray[i].inventory_type.type == "TABARD") {
+              if (
+                checkPvPRank === true ||
+                this.ilvlArray[i].inventory_type.type === "BODY" ||
+                this.ilvlArray[i].inventory_type.type == "TABARD"
+              ) {
                 switch (this.ilvlArray[i].inventory_type.type) {
                   case "HEAD":
                     this.calculateBigPieces(this.ilvlArray[i].level.value, i);
@@ -442,7 +453,7 @@ export default {
                     this.ilvlArray.splice(i, 1);
                     i = i - 1;
                     console.log(this.ilvlArray);
-                    console.log("BODY ANGEKOMMEN!")
+                    console.log("BODY ANGEKOMMEN!");
                     break;
                   case "TABARD":
                     this.ilvlArray.splice(i, 1);

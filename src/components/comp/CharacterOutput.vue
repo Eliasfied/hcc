@@ -6,14 +6,16 @@
       'background-repeat': 'no repeat',
       'background-size': '100% 100%',
       'max-width' : '60rem',
+      'padding-top' : '0px'
     }"
   >
     <div class="container">
       <div class="honorcost-div">
-        <h2>
+       <!-- <span class="span-charname"> {{fullCharname}} </span> -->
+        <span class="honor-need-text">
           You need:
           <span style="color: #ff0000">{{ honorcost }} </span>
-        </h2>
+        </span>
         <img
           class="honor-image"
           src="../../assets/achievement_legionpvptier4.gif"
@@ -185,6 +187,13 @@ export default {
       //"http://localhost:8080/getCharacterImage",
       isLoading: false,
     };
+  },
+  computed: {
+
+    fullCharname() {
+      return this.name.toUpperCase();
+    }
+
   },
   watch: {
     itemIcon: {
@@ -570,6 +579,7 @@ export default {
   justify-content: center;
   border-bottom: 3px solid lightgray;
   margin-bottom: 25px;
+  padding: 15px;
 }
 
 .left-item-div {
@@ -629,6 +639,18 @@ export default {
   margin: 8px;
   margin-right: 3px;
   color: red;
+}
+
+.honor-need-text {
+  font-size: 25px;
+  margin: 15px;
+  margin-right: 3px;
+}
+
+.span-charname {
+  font-size: 20px;
+  margin: 15px;
+  float: left;
 }
 
 .honor-image {
