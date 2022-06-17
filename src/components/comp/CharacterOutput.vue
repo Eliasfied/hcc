@@ -195,9 +195,12 @@ export default {
     },
   },
   methods: {
-    
     wowHead(index) {
-      return "https://www.wowhead.com/item=" + this.ilvlArray[index].media.id;
+      try {
+        return "https://www.wowhead.com/item=" + this.ilvlArray[index].media.id;
+      } catch {
+        return "https://www.wowhead.com/item=";
+      }
     },
 
     Rank(index) {
