@@ -438,6 +438,9 @@ export default {
                       i
                     );
                     break;
+                  case "ROBE":
+                   this.calculateBigPieces(this.ilvlArray[i].level.value, i);
+                    break;
                   case "CHEST":
                     this.calculateBigPieces(this.ilvlArray[i].level.value, i);
                     break;
