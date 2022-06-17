@@ -451,6 +451,12 @@ export default {
                   case "WRIST":
                     this.calculateSmallPieces(this.ilvlArray[i].level.value, i);
                     break;
+                  case "FEET":
+                    this.calculateMiddlePieces(
+                      this.ilvlArray[i].level.value,
+                      i
+                    );
+                    break;
                   case "HAND":
                     this.calculateMiddlePieces(
                       this.ilvlArray[i].level.value,
@@ -516,6 +522,7 @@ export default {
             }
           }
           this.itemIcon = this.itemIcon + 2;
+          console.log(this.upgradeCostArray);
           console.log(this.itemIcon);
         })
         .catch((err) => {});
