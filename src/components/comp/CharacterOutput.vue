@@ -20,7 +20,7 @@
       </div>
       <div class="left-item-div">
         <div class="item-div">
-          <a href="#"><img :src="iconArray[0]" /></a>
+          <a :href="wowHead(0)"><img :src="iconArray[0]" /></a>
           <span class="span-rank">{{ Rank(0) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(0) }}</span>
@@ -28,7 +28,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a href="#"><img :src="iconArray[1]" /></a>
+          <a :href="wowHead(1)"><img :src="iconArray[1]" /></a>
           <span class="span-rank">{{ Rank(1) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(1) }}</span>
@@ -36,7 +36,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a href="#"><img :src="iconArray[2]" /></a>
+          <a :href="wowHead(2)"><img :src="iconArray[2]" /></a>
           <span class="span-rank">{{ Rank(2) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(2) }}</span>
@@ -44,7 +44,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a href="#"><img :src="iconArray[13]" /></a>
+          <a :href="wowHead(13)"><img :src="iconArray[13]" /></a>
           <span class="span-rank">{{ Rank(13) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(13) }}</span>
@@ -52,7 +52,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a href="#"><img :src="iconArray[3]" /></a>
+          <a :href="wowHead(3)"><img :src="iconArray[3]" /></a>
           <span class="span-rank">{{ Rank(3) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(3) }}</span>
@@ -60,7 +60,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a href="#"><img :src="iconArray[4]" /></a>
+          <a :href="wowHead(4)"><img :src="iconArray[4]" /></a>
           <span class="span-rank">{{ Rank(4) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(4) }}</span>
@@ -68,7 +68,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a href="#"><img :src="iconArray[5]" /></a>
+          <a :href="wowHead(5)"><img :src="iconArray[5]" /></a>
           <span class="span-rank">{{ Rank(5) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(5) }}</span>
@@ -78,7 +78,7 @@
       </div>
       <div class="right-item-div">
         <div class="item-div">
-          <a href="#"><img :src="iconArray[6]" /></a>
+          <a :href="wowHead(6)"><img :src="iconArray[6]" /></a>
           <span class="span-rank">{{ Rank(6) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(6) }}</span>
@@ -87,7 +87,7 @@
         </div>
 
         <div class="item-div">
-          <a href="#"><img :src="iconArray[7]" /></a>
+          <a :href="wowHead(7)"><img :src="iconArray[7]" /></a>
           <span class="span-rank">{{ Rank(7) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(7) }}</span>
@@ -95,7 +95,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a href="#"><img :src="iconArray[8]" /></a>
+          <a :href="wowHead(8)"><img :src="iconArray[8]" /></a>
           <span class="span-rank">{{ Rank(8) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(8) }}</span>
@@ -103,7 +103,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a href="#"><img :src="iconArray[9]" /></a>
+          <a :href="wowHead(9)"><img :src="iconArray[9]" /></a>
           <span class="span-rank">{{ Rank(9) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(9) }}</span>
@@ -111,7 +111,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a href="#"><img :src="iconArray[10]" /></a>
+          <a :href="wowHead(10)"><img :src="iconArray[10]" /></a>
           <span class="span-rank">{{ Rank(10) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(10) }}</span>
@@ -119,7 +119,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a href="#"><img :src="iconArray[11]" /></a>
+          <a :href="wowHead(11)"><img :src="iconArray[11]" /></a>
           <span class="span-rank">{{ Rank(11) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(11) }}</span>
@@ -127,7 +127,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a href="#"><img :src="iconArray[12]" /></a>
+          <a :href="wowHead(12)"><img :src="iconArray[12]" /></a>
           <span class="span-rank">{{ Rank(12) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(12) }}</span>
@@ -137,7 +137,7 @@
       </div>
       <div class="weapon-div">
         <div class="weapon-item-div">
-          <a href="#"><img :src="iconArray[14]" /></a>
+          <a :href="wowHead(14)"><img :src="iconArray[14]" /></a>
           <span class="span-rank">{{ Rank(14) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(14) }}</span>
@@ -145,7 +145,7 @@
           <br />
         </div>
         <div class="weapon-item-div">
-          <a href="#"><img :src="iconArray[15]" /></a>
+          <a :href="wowHead(15)"><img :src="iconArray[15]" /></a>
           <span class="span-rank">{{ Rank(15) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(15) }}</span>
@@ -195,6 +195,11 @@ export default {
     },
   },
   methods: {
+    
+    wowHead(index) {
+      return "https://www.wowhead.com/item=" + this.ilvlArray[index].media.id;
+    },
+
     Rank(index) {
       //darf erst ausgeführt werden nachdem ilvlArray befüllt wurde (props geschickt wurden) -> lifecycle hook
       try {

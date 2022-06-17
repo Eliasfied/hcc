@@ -376,7 +376,7 @@ export default {
           method: "POST",
 
           url: "https://honorcostcalculator.herokuapp.com/getItemlevel",
-         // url: "http://localhost:8080/getItemlevel",
+          // url: "http://localhost:8080/getItemlevel",
 
           headers: {},
           data: {
@@ -424,7 +424,7 @@ export default {
                   "Rival II"
                 );
 
-              if (checkPvPRank === true) {
+              if (checkPvPRank === true || this.ilvlArray[i].inventory_type.type === "BODY" || this.ilvlArray[i].inventory_type.type == "TABARD") {
                 switch (this.ilvlArray[i].inventory_type.type) {
                   case "HEAD":
                     this.calculateBigPieces(this.ilvlArray[i].level.value, i);
@@ -438,8 +438,18 @@ export default {
                       i
                     );
                     break;
+                  case "BODY":
+                    this.ilvlArray.splice(i, 1);
+                    i = i - 1;
+                    console.log(this.ilvlArray);
+                    console.log("BODY ANGEKOMMEN!")
+                    break;
+                  case "TABARD":
+                    this.ilvlArray.splice(i, 1);
+                    i = i - 1;
+                    break;
                   case "ROBE":
-                   this.calculateBigPieces(this.ilvlArray[i].level.value, i);
+                    this.calculateBigPieces(this.ilvlArray[i].level.value, i);
                     break;
                   case "CHEST":
                     this.calculateBigPieces(this.ilvlArray[i].level.value, i);
