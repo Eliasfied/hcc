@@ -5,6 +5,7 @@
       'background-image': 'url(' + charMediaLink + ')',
       'background-repeat': 'no repeat',
       'background-size': '100% 100%',
+      'max-width' : '60rem',
     }"
   >
     <div class="container">
