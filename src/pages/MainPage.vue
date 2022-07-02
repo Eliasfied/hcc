@@ -374,6 +374,7 @@ export default {
       this.errorMessage = "";
       this.ilvlArray = null;
       this.honorcost = 0;
+      this.upgradeCostArray.fill(0); //clear the arraycostArray
       let getName = nameArray[0].toLowerCase();
       let getRealm = nameArray[1].toLowerCase();
       let getRegion = this.region;
