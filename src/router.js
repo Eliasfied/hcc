@@ -13,6 +13,7 @@ const router = createRouter({
     { path: "/hcc", component: MainPage },
     { path: "/info", component: InfoPage },
     { path: "/contact", component: ContactPage },
+   // {path: "/charname/realm", component: CharacterOutput}
   ],
 });
 export default router;

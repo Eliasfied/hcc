@@ -5,14 +5,17 @@
       'background-image': 'url(' + charMediaLink + ')',
       'background-repeat': 'no repeat',
       'background-size': '100% 100%',
+      'max-width' : '60rem',
+      'padding-top' : '0px'
     }"
   >
     <div class="container">
       <div class="honorcost-div">
-        <h2>
-          You need:
+       <!-- <span class="span-charname"> {{fullCharname}} </span> -->
+        <span class="honor-need-text">
+         Total:
           <span style="color: #ff0000">{{ honorcost }} </span>
-        </h2>
+        </span>
         <img
           class="honor-image"
           src="../../assets/achievement_legionpvptier4.gif"
@@ -20,7 +23,7 @@
       </div>
       <div class="left-item-div">
         <div class="item-div">
-          <a :href="wowHead(0)"><img :src="iconArray[0]" /></a>
+          <a :href="wowHead(0)"><img class="gear-img" :src="iconArray[0]" /></a>
           <span class="span-rank">{{ Rank(0) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(0) }}</span>
@@ -28,7 +31,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a :href="wowHead(1)"><img :src="iconArray[1]" /></a>
+          <a :href="wowHead(1)"><img class="gear-img" :src="iconArray[1]" /></a>
           <span class="span-rank">{{ Rank(1) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(1) }}</span>
@@ -36,7 +39,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a :href="wowHead(2)"><img :src="iconArray[2]" /></a>
+          <a :href="wowHead(2)"><img class="gear-img" :src="iconArray[2]" /></a>
           <span class="span-rank">{{ Rank(2) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(2) }}</span>
@@ -44,7 +47,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a :href="wowHead(13)"><img :src="iconArray[13]" /></a>
+          <a :href="wowHead(13)"><img class="gear-img" :src="iconArray[13]" /></a>
           <span class="span-rank">{{ Rank(13) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(13) }}</span>
@@ -52,7 +55,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a :href="wowHead(3)"><img :src="iconArray[3]" /></a>
+          <a :href="wowHead(3)"><img class="gear-img" :src="iconArray[3]" /></a>
           <span class="span-rank">{{ Rank(3) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(3) }}</span>
@@ -60,7 +63,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a :href="wowHead(4)"><img :src="iconArray[4]" /></a>
+          <a :href="wowHead(4)"><img class="gear-img" :src="iconArray[4]" /></a>
           <span class="span-rank">{{ Rank(4) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(4) }}</span>
@@ -68,7 +71,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a :href="wowHead(5)"><img :src="iconArray[5]" /></a>
+          <a :href="wowHead(5)"><img class="gear-img" :src="iconArray[5]" /></a>
           <span class="span-rank">{{ Rank(5) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(5) }}</span>
@@ -78,7 +81,7 @@
       </div>
       <div class="right-item-div">
         <div class="item-div">
-          <a :href="wowHead(6)"><img :src="iconArray[6]" /></a>
+          <a :href="wowHead(6)"><img class="gear-img" :src="iconArray[6]" /></a>
           <span class="span-rank">{{ Rank(6) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(6) }}</span>
@@ -87,7 +90,7 @@
         </div>
 
         <div class="item-div">
-          <a :href="wowHead(7)"><img :src="iconArray[7]" /></a>
+          <a :href="wowHead(7)"><img class="gear-img" :src="iconArray[7]" /></a>
           <span class="span-rank">{{ Rank(7) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(7) }}</span>
@@ -95,7 +98,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a :href="wowHead(8)"><img :src="iconArray[8]" /></a>
+          <a :href="wowHead(8)"><img class="gear-img" :src="iconArray[8]" /></a>
           <span class="span-rank">{{ Rank(8) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(8) }}</span>
@@ -103,7 +106,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a :href="wowHead(9)"><img :src="iconArray[9]" /></a>
+          <a :href="wowHead(9)"><img class="gear-img" :src="iconArray[9]" /></a>
           <span class="span-rank">{{ Rank(9) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(9) }}</span>
@@ -111,7 +114,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a :href="wowHead(10)"><img :src="iconArray[10]" /></a>
+          <a :href="wowHead(10)"><img class="gear-img" :src="iconArray[10]" /></a>
           <span class="span-rank">{{ Rank(10) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(10) }}</span>
@@ -119,7 +122,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a :href="wowHead(11)"><img :src="iconArray[11]" /></a>
+          <a :href="wowHead(11)"><img class="gear-img" :src="iconArray[11]" /></a>
           <span class="span-rank">{{ Rank(11) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(11) }}</span>
@@ -127,7 +130,7 @@
           <br />
         </div>
         <div class="item-div">
-          <a :href="wowHead(12)"><img :src="iconArray[12]" /></a>
+          <a :href="wowHead(12)"><img class="gear-img" :src="iconArray[12]" /></a>
           <span class="span-rank">{{ Rank(12) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(12) }}</span>
@@ -137,7 +140,7 @@
       </div>
       <div class="weapon-div">
         <div class="weapon-item-div">
-          <a :href="wowHead(14)"><img :src="iconArray[14]" /></a>
+          <a :href="wowHead(14)"><img class="gear-img" :src="iconArray[14]" /></a>
           <span class="span-rank">{{ Rank(14) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(14) }}</span>
@@ -145,7 +148,7 @@
           <br />
         </div>
         <div class="weapon-item-div">
-          <a :href="wowHead(15)"><img :src="iconArray[15]" /></a>
+          <a :href="wowHead(15)"><img class="gear-img" :src="iconArray[15]" /></a>
           <span class="span-rank">{{ Rank(15) }}</span>
           <br />
           <span class="span-cost">{{ upgradeCosts(15) }}</span>
@@ -184,6 +187,13 @@ export default {
       //"http://localhost:8080/getCharacterImage",
       isLoading: false,
     };
+  },
+  computed: {
+
+    fullCharname() {
+      return this.name.toUpperCase();
+    }
+
   },
   watch: {
     itemIcon: {
@@ -249,14 +259,14 @@ export default {
             try {
               this.iconArray[15] = resp.data.assets[0].value;
             } catch (error) {
-              this.iconArray[15] = "../../assets/nopicture.png";
+              this.iconArray[15] = "";
             }
           })
           .catch((error) => {
             console.log(error);
           });
       } catch {
-        this.iconArray[15] = "../../assets/nopicture.png";
+        this.iconArray[15] = "../../assets/eu.png";
       }
     },
   
@@ -569,6 +579,13 @@ export default {
   justify-content: center;
   border-bottom: 3px solid lightgray;
   margin-bottom: 25px;
+  padding: 15px;
+}
+
+.honor-need-text {
+  font-size: 25px;
+  margin: 15px;
+  margin-right: 3px;
 }
 
 .left-item-div {
@@ -604,10 +621,11 @@ export default {
 }
 
 .item-div {
+  position: relative;
   background-color: transparent;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   width: auto;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -619,6 +637,9 @@ export default {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+
+
+
 .span-rank {
   margin: 8px;
   color: green;
@@ -628,6 +649,14 @@ export default {
   margin: 8px;
   margin-right: 3px;
   color: red;
+}
+
+
+
+.span-charname {
+  font-size: 20px;
+  margin: 15px;
+  float: left;
 }
 
 .honor-image {

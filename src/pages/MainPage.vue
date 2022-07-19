@@ -1,7 +1,7 @@
 <template>
   <base-card>
     <div class="hcc-container">
-      <form class="hcc-form">
+      <form @submit.prevent="getItemlevel" class="hcc-form">
         <label for="input" class="input-label">Find your Character</label>
         <input
           :maxlength="40"
@@ -81,6 +81,13 @@ export default {
   },
 
   created() {
+    document.addEventListener.call(window, "keyup", event => {
+      if (event.key === 13) {
+        console.log("lol");
+        this.getItemlevel();
+      }
+    });
+
     axios.request({
       method: "GET",
 
@@ -367,6 +374,7 @@ export default {
       this.errorMessage = "";
       this.ilvlArray = null;
       this.honorcost = 0;
+      this.upgradeCostArray.fill(0); //clear the arraycostArray
       let getName = nameArray[0].toLowerCase();
       let getRealm = nameArray[1].toLowerCase();
       let getRegion = this.region;
@@ -424,7 +432,11 @@ export default {
                   "Rival II"
                 );
 
-              if (checkPvPRank === true || this.ilvlArray[i].inventory_type.type === "BODY" || this.ilvlArray[i].inventory_type.type == "TABARD") {
+              if (
+                checkPvPRank === true ||
+                this.ilvlArray[i].inventory_type.type === "BODY" ||
+                this.ilvlArray[i].inventory_type.type == "TABARD"
+              ) {
                 switch (this.ilvlArray[i].inventory_type.type) {
                   case "HEAD":
                     this.calculateBigPieces(this.ilvlArray[i].level.value, i);
@@ -442,7 +454,7 @@ export default {
                     this.ilvlArray.splice(i, 1);
                     i = i - 1;
                     console.log(this.ilvlArray);
-                    console.log("BODY ANGEKOMMEN!")
+                    console.log("BODY ANGEKOMMEN!");
                     break;
                   case "TABARD":
                     this.ilvlArray.splice(i, 1);
@@ -554,6 +566,11 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+
+
+
+
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -618,6 +635,8 @@ body {
   margin-right: 0;
 }
 
+
+
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgb(224, 255, 255, 0.5);
@@ -654,5 +673,22 @@ input {
 
 #errorHeader {
   color: red;
+}
+
+
+@media (max-width: 375px) {
+
+#input {
+  font-size: 2ch;
+}
+
+.calculateHonorButton {
+  font-size: 2ch;
+
+}
+
+
+
+
 }
 </style>
