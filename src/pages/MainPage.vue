@@ -676,7 +676,7 @@ input {
 }
 
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
 
 #input {
   font-size: 2ch;

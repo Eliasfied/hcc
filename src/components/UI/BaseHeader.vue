@@ -167,7 +167,7 @@ li {
   margin: 1rem 0;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .header-image {
     height: 50px;
     margin-left: 25px;
@@ -198,7 +198,7 @@ li {
   }
 }
 
-@media (min-width: 375px) {
+@media (min-width: 414px) {
   .toggle-button {
     display: none;
   }
