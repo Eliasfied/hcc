@@ -6,9 +6,9 @@
         <span class="toggle-button-bar"></span>
         <span class="toggle-button-bar"></span>
       </button>
+      <img src="../../assets/hcclogo.png" class="header-image" />
     </div>
     <nav>
-      <img src="../../assets/hcclogo.png" class="header-image" />
       <ul>
         <h1>
           <li><router-link to="/hcc">Home</router-link></li>
@@ -64,7 +64,7 @@ header {
   height: 4rem;
   background-color: black;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   color: black;
   border-bottom: 4px solid rgb(0, 98, 128);
@@ -73,12 +73,13 @@ header {
 header a {
   text-decoration: none;
   color: black;
-  display: inline-block;
+  display: flex;
   padding: 0.75rem 1.5rem;
   border: 1px solid transparent;
 }
 
 .header-image {
+  display: flex;
   height: 50px;
   margin-left: 85px;
 }
@@ -99,17 +100,14 @@ h1 a.router-link-active {
 }
 
 header nav {
-  width: 100%;
-  margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 header ul {
   list-style: none;
   margin: 0;
-  margin-right: 50px;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -171,6 +169,7 @@ li {
   .header-image {
     height: 50px;
     margin-left: 25px;
+    display: none;
   }
 
   header ul {

@@ -224,7 +224,7 @@ export default {
       try {
         if (
           this.ilvlArray[index].name_description != undefined &&
-          !this.ilvlArray[index].name.includes("Unchained")
+          !this.ilvlArray[index].name.includes("Cosmic")
         ) {
           return this.ilvlArray[index].name_description.display_string;
         } else {

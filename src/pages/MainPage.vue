@@ -77,6 +77,20 @@ export default {
       errorMessage: "",
       upgradeCostArray: [],
       itemIcon: 0,
+
+      //following needs to be changed when season changes
+      seasonName: "Cosmic",
+      upgradeLevels: {
+        unranked: 275,
+        combatant1: 278,
+        combatant2: 281,
+        challenger1: 285,
+        challenger2: 288,
+        rival1: 2,
+        rival2: 294,
+        duelist: 298,
+        elite: 301
+      }
     };
   },
 
@@ -109,39 +123,39 @@ export default {
     calculateBigPieces(itemlvl, index) {
       //head, chest, legs, melee weapons for 900 conquest
       switch (itemlvl) {
-        case 249:
+        case this.upgradeLevels.unranked:
           this.honorcost = this.honorcost + 8725;
           this.upgradeCostArray[index] = 8725;
           break;
-        case 252:
+        case this.upgradeLevels.combatant1:
           this.honorcost = this.honorcost + 7950;
           this.upgradeCostArray[index] = 7950;
           break;
-        case 255:
+        case this.upgradeLevels.combatant2:
           this.honorcost = this.honorcost + 7025;
           this.upgradeCostArray[index] = 7025;
           break;
-        case 259:
+        case this.upgradeLevels.challenger1:
           this.honorcost = this.honorcost + 5950;
           this.upgradeCostArray[index] = 5950;
           break;
-        case 262:
+        case this.upgradeLevels.challenger2:
           this.honorcost = this.honorcost + 4725;
           this.upgradeCostArray[index] = 4725;
           break;
-        case 265:
+        case this.upgradeLevels.rival1:
           this.honorcost = this.honorcost + 3350;
           this.upgradeCostArray[index] = 3350;
           break;
-        case 268:
+        case this.upgradeLevels.rival2:
           this.honorcost = this.honorcost + 1825;
           this.upgradeCostArray[index] = 1825;
           break;
-        case 272:
+        case this.upgradeLevels.duelist:
           this.honorcost = this.honorcost + 0;
           this.upgradeCostArray[index] = 0;
           break;
-        case 275:
+        case this.upgradeLevels.elite:
           this.honorcost = this.honorcost + 0;
           this.upgradeCostArray[index] = 0;
           break;
@@ -151,39 +165,39 @@ export default {
     calculateSmallPieces(itemlvl, index) {
       //neck, back, wrist, finger
       switch (itemlvl) {
-        case 249:
+        case this.upgradeLevels.unranked:
           this.honorcost = this.honorcost + 5225;
           this.upgradeCostArray[index] = 5225;
           break;
-        case 252:
+        case this.upgradeLevels.combatant1:
           this.honorcost = this.honorcost + 5225 - 450;
           this.upgradeCostArray[index] = 5225 - 450;
           break;
-        case 255:
+        case this.upgradeLevels.combatant2:
           this.honorcost = this.honorcost + 5225 - 1000;
           this.upgradeCostArray[index] = 5225 - 1000;
           break;
-        case 259:
+        case this.upgradeLevels.challenger1:
           this.honorcost = this.honorcost + 5225 - 1650;
           this.upgradeCostArray[index] = 5225 - 1650;
           break;
-        case 262:
+        case this.upgradeLevels.challenger2:
           this.honorcost = this.honorcost + 5225 - 2375;
           this.upgradeCostArray[index] = 5225 - 2375;
           break;
-        case 265:
+        case this.upgradeLevels.rival1:
           this.honorcost = this.honorcost + 5225 - 3200;
           this.upgradeCostArray[index] = 5225 - 3200;
           break;
-        case 268:
+        case this.upgradeLevels.rival2:
           this.honorcost = this.honorcost + 5225 - 4125;
           this.upgradeCostArray[index] = 5225 - 4125;
           break;
-        case 272:
+        case this.upgradeLevels.duelist:
           this.honorcost = this.honorcost + 0;
           this.upgradeCostArray[index] = 0;
           break;
-        case 275:
+        case this.upgradeLevels.elite:
           this.honorcost = this.honorcost + 0;
           this.upgradeCostArray[index] = 0;
           break;
@@ -193,39 +207,39 @@ export default {
     calculateMiddlePieces(itemlvl, index) {
       //shoulder, waist, feet, trinket(not insigne), hands
       switch (itemlvl) {
-        case 249:
+        case this.upgradeLevels.unranked:
           this.honorcost = this.honorcost + 6950;
           this.upgradeCostArray[index] = 6950;
           break;
-        case 252:
+        case this.upgradeLevels.combatant1:
           this.honorcost = this.honorcost + 6950 - 600;
           this.upgradeCostArray[index] = 6950 - 600;
           break;
-        case 255:
+        case this.upgradeLevels.combatant2:
           this.honorcost = this.honorcost + 6950 - 1325;
           this.upgradeCostArray[index] = 6950 - 1325;
           break;
-        case 259:
+        case this.upgradeLevels.challenger1:
           this.honorcost = this.honorcost + 6950 - 2175;
           this.upgradeCostArray[index] = 6950 - 2175;
           break;
-        case 262:
+        case this.upgradeLevels.challenger2:
           this.honorcost = this.honorcost + 6950 - 3150;
           this.upgradeCostArray[index] = 6950 - 3150;
           break;
-        case 265:
+        case this.upgradeLevels.rival1:
           this.honorcost = this.honorcost + 6950 - 4250;
           this.upgradeCostArray[index] = 6950 - 4250;
           break;
-        case 268:
+        case this.upgradeLevels.rival2:
           this.honorcost = this.honorcost + 6950 - 5475;
           this.upgradeCostArray[index] = 6950 - 5475;
           break;
-        case 272:
+        case this.upgradeLevels.duelist:
           this.honorcost = this.honorcost + 0;
           this.upgradeCostArray[index] = 0;
           break;
-        case 275:
+        case this.upgradeLevels.elite:
           this.honorcost = this.honorcost + 0;
           this.upgradeCostArray[index] = 0;
           break;
@@ -235,39 +249,39 @@ export default {
     calculate2HandWeapon(itemlvl, index) {
       //shoulder, waist, feet, trinket(not insigne), hands
       switch (itemlvl) {
-        case 249:
+        case this.upgradeLevels.unranked:
           this.honorcost = this.honorcost + 17450;
           this.upgradeCostArray[index] = 17450;
           break;
-        case 252:
+        case this.upgradeLevels.combatant1:
           this.honorcost = this.honorcost + 17450 - 1550;
           this.upgradeCostArray[index] = 17450 - 1550;
           break;
-        case 255:
+        case this.upgradeLevels.combatant2:
           this.honorcost = this.honorcost + 17450 - 3400;
           this.upgradeCostArray[index] = 17450 - 3400;
           break;
-        case 259:
+        case this.upgradeLevels.challenger1:
           this.honorcost = this.honorcost + 17450 - 5500;
           this.upgradeCostArray[index] = 17450 - 5500;
           break;
-        case 262:
+        case this.upgradeLevels.challenger2:
           this.honorcost = this.honorcost + 17450 - 8000;
           this.upgradeCostArray[index] = 17450 - 8000;
           break;
-        case 265:
+        case this.upgradeLevels.rival1:
           this.honorcost = this.honorcost + 17450 - 10750;
           this.upgradeCostArray[index] = 17450 - 10750;
           break;
-        case 268:
+        case this.upgradeLevels.rival2:
           this.honorcost = this.honorcost + 17450 - 13800;
           this.upgradeCostArray[index] = 17450 - 13800;
           break;
-        case 272:
+        case this.upgradeLevels.duelist:
           this.honorcost = this.honorcost + 0;
           this.upgradeCostArray[index] = 0;
           break;
-        case 275:
+        case this.upgradeLevels.elite:
           this.honorcost = this.honorcost + 0;
           this.upgradeCostArray[index] = 0;
           break;
@@ -277,39 +291,39 @@ export default {
     calculateShield(itemlvl, index) {
       //shield and offhand
       switch (itemlvl) {
-        case 249:
+        case this.upgradeLevels.unranked:
           this.honorcost = this.honorcost + 4300;
           this.upgradeCostArray[index] = 4300;
           break;
-        case 252:
+        case this.upgradeLevels.combatant1:
           this.honorcost = this.honorcost + 4300 - 375;
           this.upgradeCostArray[index] = 4300 - 375;
           break;
-        case 255:
+        case this.upgradeLevels.combatant2:
           this.honorcost = this.honorcost + 4300 - 825;
           this.upgradeCostArray[index] = 4300 - 825;
           break;
-        case 259:
+        case this.upgradeLevels.challenger1:
           this.honorcost = this.honorcost + 4300 - 1350;
           this.upgradeCostArray[index] = 4300 - 1350;
           break;
-        case 262:
+        case this.upgradeLevels.challenger2:
           this.honorcost = this.honorcost + 4300 - 1950;
           this.upgradeCostArray[index] = 4300 - 1950;
           break;
-        case 265:
+        case this.upgradeLevels.rival1:
           this.honorcost = this.honorcost + 4300 - 2625;
           this.upgradeCostArray[index] = 4300 - 2625;
           break;
-        case 268:
+        case this.upgradeLevels.rival2:
           this.honorcost = this.honorcost + 4300 - 3375;
           this.upgradeCostArray[index] = 4300 - 3375;
           break;
-        case 272:
+        case this.upgradeLevels.duelist:
           this.honorcost = this.honorcost + 0;
           this.upgradeCostArray[index] = 0;
           break;
-        case 275:
+        case this.upgradeLevels.elite:
           this.honorcost = this.honorcost + 0;
           this.upgradeCostArray[index] = 0;
           break;
@@ -319,39 +333,39 @@ export default {
     calculateMainHand(itemlvl, index) {
       //caster Mainhand
       switch (itemlvl) {
-        case 249:
+        case this.upgradeLevels.unranked:
           this.honorcost = this.honorcost + 13150;
           this.upgradeCostArray[index] = 13150;
           break;
-        case 252:
+        case this.upgradeLevels.combatant1:
           this.honorcost = this.honorcost + 13150 - 1175;
           this.upgradeCostArray[index] = 13150 - 1175;
           break;
-        case 255:
+        case this.upgradeLevels.combatant2:
           this.honorcost = this.honorcost + 13150 - 2575;
           this.upgradeCostArray[index] = 13150 - 2575;
           break;
-        case 259:
+        case this.upgradeLevels.challenger1:
           this.honorcost = this.honorcost + 13150 - 4200;
           this.upgradeCostArray[index] = 13150 - 4200;
           break;
-        case 262:
+        case this.upgradeLevels.challenger2:
           this.honorcost = this.honorcost + 13150 - 6050;
           this.upgradeCostArray[index] = 13150 - 6050;
           break;
-        case 265:
+        case this.upgradeLevels.rival1:
           this.honorcost = this.honorcost + 13150 - 8125;
           this.upgradeCostArray[index] = 13150 - 8125;
           break;
-        case 268:
+        case this.upgradeLevels.rival2:
           this.honorcost = this.honorcost + 13150 - 10425;
           this.upgradeCostArray[index] = 13150 - 10425;
           break;
-        case 272:
+        case this.upgradeLevels.duelist:
           this.honorcost = this.honorcost + 0;
           this.upgradeCostArray[index] = 0;
           break;
-        case 275:
+        case this.upgradeLevels.elite:
           this.honorcost = this.honorcost + 0;
           this.upgradeCostArray[index] = 0;
           break;
@@ -407,7 +421,7 @@ export default {
             console.log(this.ilvlArray[i].name);
             if (
               this.ilvlArray[i].name_description != undefined &&
-              !this.ilvlArray[i].name.includes("Unchained")
+              !this.ilvlArray[i].name.includes(this.seasonName)    // last season name
             ) {
               const checkPvPRank =
                 this.ilvlArray[i].name_description.display_string.includes(

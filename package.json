@@ -21,6 +21,8 @@
     "css.gg": "^2.0.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
+    "mongodb": "^4.8.0",
+    "mongoose": "^6.4.6",
     "vue": "^3.0.0",
     "vue-awesome": "^4.5.0",
     "vue-router": "^4.0.12"
