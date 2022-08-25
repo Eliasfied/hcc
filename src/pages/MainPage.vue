@@ -86,7 +86,7 @@ export default {
         combatant2: 281,
         challenger1: 285,
         challenger2: 288,
-        rival1: 2,
+        rival1: 291,
         rival2: 294,
         duelist: 298,
         elite: 301
@@ -95,6 +95,7 @@ export default {
   },
 
   created() {
+    // hit enter to call getItemlevel function
     document.addEventListener.call(window, "keyup", event => {
       if (event.key === 13) {
         console.log("lol");
